@@ -1,14 +1,14 @@
-# NewsNexusPortal09
+# News Nexus 10 Portal
 
 ## Overview
 
-NewsNexus Portal is the web interface for the NewsNexus09Db and microservices suite of applications.
-NewsNexusPortal09 is a complete modernization of the previous NewsNexus08Portal web app.
+NewsNexus10Portal is the web interface for the NewsNexus10Db and microservices suite of applications.
+NewsNexus10Portal is a updated version of NewsNexusPortal09 - and complete modernization of the previous NewsNexus08Portal web app.
 While v08 was built with plain JavaScript, minimal styling, and without Next.js conventions, v09 rebuilds the Portal from the ground up using Next.js (App Router), TailwindCSS, and TypeScript, ensuring long-term scalability, maintainability, and alignment with modern React best practices.
 
 This version starts from a clean npx create-next-app@latest base and adopts the architectural patterns and UI structure of the open-source free-nextjs-admin-dashboard-main project. That template provides a well-organized file system, reusable components, and responsive dashboard layouts — features that will serve as the foundation for implementing all existing NewsNexus08Portal content, workflows, and user interfaces in a structured, convention-driven way.
 
-The goal of NewsNexusPortal09 is to faithfully re-create and enhance the functionality of the previous Portal within a modern Next.js environment, ultimately serving as the main front end for interacting with NewsNexusAPI09 and the broader News Nexus 09 microservice suite.
+The goal of NewsNexus10Portal is to faithfully re-create and enhance the functionality of the previous Portal within a modern Next.js environment, ultimately serving as the main front end for interacting with NewsNexusAPI09 and the broader News Nexus 09 microservice suite.
 
 ### Overview TL;DR
 
@@ -80,6 +80,7 @@ The goal of NewsNexusPortal09 is to faithfully re-create and enhance the functio
 ```
 
 ## .env
+
 ```
 NEXT_PUBLIC_API_BASE_URL=https://api.news-nexus.kineticmetrics.com
 NEXT_PUBLIC_API_BASE_URL_DEV=https://api.news-nexus-dev.kineticmetrics.com
@@ -87,7 +88,6 @@ NEXT_PUBLIC_API_BASE_URL_WORKSTATION=http://localhost:3000
 NEXT_PUBLIC_APP_NAME=NewsNexus
 NEXT_PUBLIC_MODE=dev
 ```
-
 
 ## Key differences from version 08
 

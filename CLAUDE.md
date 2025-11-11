@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-NewsNexusPortal09 is a Next.js 15 web application built with the App Router, serving as the modernized front end for the NewsNexus09Db and microservices suite. It's a complete rebuild of NewsNexus08Portal (which was built with plain JavaScript), now using Next.js conventions, TypeScript, TailwindCSS v4, and Redux Toolkit with persist for state management.
+NewsNexus10Portal is a Next.js 15 web application built with the App Router, serving as the modernized front end for the NewsNexus10Db and microservices suite. It uses Next.js conventions, TypeScript, TailwindCSS v4, and Redux Toolkit with persist for state management.
 
 The project architecture is heavily inspired by the free-nextjs-admin-dashboard-main template, providing a structured file system, reusable components, and responsive dashboard layouts.
 
@@ -23,38 +23,6 @@ npm start
 # Run ESLint
 npm run lint
 ```
-
-## Component Refactoring Difficulty Scale
-
-When migrating components from NewsNexus08Portal (v08) to NewsNexusPortal09 (v09), use this scale to assess implementation complexity:
-
-**Rating: 0-10** where:
-
-- **0-2**: Very easy - Minimal changes, fits existing patterns perfectly, 1 new file max
-- **3-5**: Moderate - May need to modify 1-2 existing files, create 1-2 new files, some pattern adjustments
-- **6-8**: Complex - Requires modifying 3+ files, new architectural patterns, significant refactoring
-- **9-10**: Very complex - Major architectural changes, multiple new systems, extensive refactoring
-
-### Factors That Affect Difficulty:
-
-- Number of new files to create
-- Number of existing files to modify
-- Architectural pattern compatibility
-- Redux store modifications needed
-- New dependencies required
-- Conflicts with existing systems (sidebar, header, modals, etc.)
-- Styling/theme integration complexity
-
-### Example Assessment:
-
-**SummaryStatistics Component**: Rating 2/10
-
-- ✅ 1 new file (`SummaryStatistics.tsx`)
-- ✅ 0 existing files modified
-- ✅ Redux actions already exist
-- ✅ Styling template available (EcommerceMetrics)
-- ✅ No modal system conflicts (uses inline loading)
-- ✅ No new dependencies
 
 ## Architecture & Key Patterns
 
