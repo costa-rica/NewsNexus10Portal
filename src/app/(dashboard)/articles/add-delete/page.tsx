@@ -7,6 +7,8 @@ import TableReviewArticles from "@/components/tables/TableReviewArticles";
 import MultiSelect from "@/components/form/MultiSelect";
 import { Modal } from "@/components/ui/modal";
 import { ModalInformationOk } from "@/components/ui/modal/ModalInformationOk";
+import { ModalInformationYesOrNo } from "@/components/ui/modal/ModalInformationYesOrNo";
+import { LoadingDots } from "@/components/common/LoadingDots";
 import type { Article } from "@/types/article";
 
 interface State {
@@ -35,6 +37,8 @@ export default function AddDeleteArticle() {
 	const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
 	const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
 	const [articleToDelete, setArticleToDelete] = useState<Article | null>(null);
+	const [isOpenUpdateModal, setIsOpenUpdateModal] = useState(false);
+	const [isUpdating, setIsUpdating] = useState(false);
 	const [inputErrors, setInputErrors] = useState({
 		publicationName: false,
 		title: false,
@@ -307,6 +311,71 @@ export default function AddDeleteArticle() {
 		}
 	};
 
+	const handleUpdateArticleData = async () => {
+		if (!token || !newArticle?.id) return;
+
+		setIsUpdating(true);
+		setIsOpenUpdateModal(false);
+
+		try {
+			// Get selected state IDs
+			const selectedStateIds = stateArray
+				.filter((st) => st.selected)
+				.map((st) => st.id);
+
+			// Prepare request body
+			const requestBody = {
+				newPublicationName: newArticle.publicationName || null,
+				newTitle: newArticle.title || null,
+				newUrl: newArticle.url || null,
+				newPublishedDate: newArticle.publishedDate || null,
+				newStateIdsArray: selectedStateIds.length > 0 ? selectedStateIds : null,
+				newContent: newArticle.content || null,
+			};
+
+			const response = await fetch(
+				`${process.env.NEXT_PUBLIC_API_BASE_URL}/articles/update-approved-all/${newArticle.id}`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${token}`,
+					},
+					body: JSON.stringify(requestBody),
+				}
+			);
+
+			const resJson = await response.json();
+
+			if (!response.ok) {
+				setAlertModal({
+					show: true,
+					variant: "error",
+					title: "Update Failed",
+					message: resJson.message || `Server error: ${response.status}`,
+				});
+				return;
+			}
+
+			setAlertModal({
+				show: true,
+				variant: "success",
+				title: "Success",
+				message: "Article updated successfully!",
+			});
+		} catch (error) {
+			console.error("Error updating article:", error);
+			setAlertModal({
+				show: true,
+				variant: "error",
+				title: "Error",
+				message: "Error updating article. Please try again.",
+			});
+		} finally {
+			setIsUpdating(false);
+		}
+	};
+
 	return (
 		<div className="flex flex-col gap-4 md:gap-6">
 			{/* Summary Statistics */}
@@ -319,13 +388,22 @@ export default function AddDeleteArticle() {
 			{/* Form Section */}
 			<div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/[0.03]">
 				<div className="space-y-4">
+					{/* Article ID Header - only shown when editing */}
+					{newArticle?.id && (
+						<div className="mb-6 pb-4 border-b border-gray-200 dark:border-gray-700">
+							<h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+								Article ID: {newArticle.id}
+							</h3>
+						</div>
+					)}
+
 					{/* Publication Name */}
 					<div className="flex flex-col gap-2">
 						<label
 							htmlFor="publicationName"
 							className="text-sm font-medium text-gray-700 dark:text-gray-300"
 						>
-							Publication Name: <span className="text-red-500">*</span>
+							Publication Name:
 						</label>
 						<input
 							id="publicationName"
@@ -351,7 +429,7 @@ export default function AddDeleteArticle() {
 							htmlFor="title"
 							className="text-sm font-medium text-gray-700 dark:text-gray-300"
 						>
-							Title: <span className="text-red-500">*</span>
+							Title:
 						</label>
 						<input
 							id="title"
@@ -393,7 +471,7 @@ export default function AddDeleteArticle() {
 							htmlFor="publishedDate"
 							className="text-sm font-medium text-gray-700 dark:text-gray-300"
 						>
-							Published Date: <span className="text-red-500">*</span>
+							Published Date:
 						</label>
 						<input
 							id="publishedDate"
@@ -440,7 +518,7 @@ export default function AddDeleteArticle() {
 							htmlFor="content"
 							className="text-sm font-medium text-gray-700 dark:text-gray-300"
 						>
-							Content: <span className="text-red-500">*</span>
+							Content:
 						</label>
 						<textarea
 							id="content"
@@ -462,15 +540,23 @@ export default function AddDeleteArticle() {
 					{/* Buttons */}
 					<div className="flex gap-3 pt-2">
 						{newArticle?.id ? (
-							<button
-								onClick={() => {
-									setNewArticle({});
-									updateStateArrayWithArticleState({ States: [] });
-								}}
-								className="px-6 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
-							>
-								Clear
-							</button>
+							<>
+								<button
+									onClick={() => {
+										setNewArticle({});
+										updateStateArrayWithArticleState({ States: [] });
+									}}
+									className="px-6 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600"
+								>
+									Clear
+								</button>
+								<button
+									onClick={() => setIsOpenUpdateModal(true)}
+									className="px-6 py-2 text-sm font-medium text-white bg-brand-500 rounded-lg hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700"
+								>
+									Update
+								</button>
+							</>
 						) : (
 							<button
 								onClick={handleAddAndSubmitArticle}
@@ -532,6 +618,25 @@ export default function AddDeleteArticle() {
 				</Modal>
 			)}
 
+			{/* Update Confirmation Modal */}
+			{isOpenUpdateModal && (
+				<Modal
+					isOpen={isOpenUpdateModal}
+					onClose={() => setIsOpenUpdateModal(false)}
+				>
+					<ModalInformationYesOrNo
+						title="Update Article"
+						message="This will permanently change the article data in the database. Are you sure you want to proceed?"
+						onYes={handleUpdateArticleData}
+						onNo={() => setIsOpenUpdateModal(false)}
+						onClose={() => setIsOpenUpdateModal(false)}
+						yesButtonText="Update"
+						noButtonText="Cancel"
+						yesButtonStyle="primary"
+					/>
+				</Modal>
+			)}
+
 			{/* Alert Modal */}
 			<Modal
 				isOpen={alertModal.show}
@@ -545,6 +650,18 @@ export default function AddDeleteArticle() {
 					onClose={() => setAlertModal({ ...alertModal, show: false })}
 				/>
 			</Modal>
+
+			{/* Loading Overlay */}
+			{isUpdating && (
+				<div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+					<div className="bg-white dark:bg-gray-800 rounded-lg p-8 flex flex-col items-center gap-4">
+						<LoadingDots size={4} />
+						<p className="text-gray-700 dark:text-gray-300 text-lg font-medium">
+							Updating article...
+						</p>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 }
