@@ -57,3 +57,29 @@ export interface UnassignedArticle {
 
 // State count data type - uses Record for dynamic column keys
 export type StateCountData = Record<string, string | number>;
+
+// ArticleApproved record from AI approval system
+export interface ArticleApproved {
+	id: number;
+	artificialIntelligenceId: number;
+	createdAt: string;
+	isApproved: boolean;
+	headlineForPdfReport: string;
+	publicationNameForPdfReport: string;
+	publicationDateForPdfReport: string;
+	textForPdfReport: string;
+	urlForPdfReport: string;
+	kmNotes: string;
+}
+
+// ChatGPT Approved Article type for ChatGPT analysis page
+export interface ChatGPTApprovedArticle extends Article {
+	author?: string;
+	urlToImage?: string;
+	entityWhoFoundArticleId?: number;
+	newsApiRequestId?: number | null;
+	newsRssRequestId?: number | null;
+	createdAt?: string;
+	stateAbbreviation?: string;
+	ArticleApproveds: ArticleApproved[];
+}
