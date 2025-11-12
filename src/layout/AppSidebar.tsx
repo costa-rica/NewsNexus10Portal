@@ -51,6 +51,7 @@ const navItems: NavItem[] = [
 			{ name: "Article Request", path: "/analysis/article-requests", pro: false },
 			{ name: "Count by State", path: "/analysis/count-by-state", pro: false },
 			{ name: "Approved Duplicate Analysis", path: "/analysis/approved-article-duplicate", pro: false },
+			{ name: "Approved ChatGPT", path: "/analysis/approved-chatgpt", pro: false },
 		],
 	},
 	{
