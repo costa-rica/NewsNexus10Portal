@@ -10,6 +10,7 @@ import {
 	createColumnHelper,
 	SortingState,
 	PaginationState,
+	VisibilityState,
 } from "@tanstack/react-table";
 import { ChatGPTApprovedArticle } from "@/types/article";
 import ColumnVisibilityDropdown from "./ColumnVisibilityDropdown";
@@ -37,7 +38,7 @@ const TableApprovedArticlesChatGpt: React.FC<TableApprovedArticlesChatGptProps> 
 	});
 	const [sorting, setSorting] = useState<SortingState>([]);
 	const [globalFilter, setGlobalFilter] = useState("");
-	const [columnVisibility, setColumnVisibility] = useState({ createdAt: false });
+	const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({ createdAt: false });
 
 	const columns = useMemo(
 		() => [
