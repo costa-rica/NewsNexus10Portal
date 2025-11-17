@@ -99,16 +99,26 @@ const TableApprovedArticlesChatGpt: React.FC<TableApprovedArticlesChatGptProps> 
 					</div>
 				),
 			}),
-			columnHelper.accessor("ArticleApproveds", {
-				id: "aiApproval",
-				header: "AI Approved",
-				enableSorting: false,
-				cell: ({ row }) => (
-					<div className="text-sm text-gray-700 dark:text-gray-300">
-						{row.original.ArticleApproveds?.[0]?.isApproved ? "Yes" : "No"}
-					</div>
-				),
-			}),
+			columnHelper.accessor(
+				(row) => {
+					// Get the most recent approval (last in array)
+					const approvals = row.ArticlesApproved02;
+					if (!approvals || approvals.length === 0) return false;
+					const mostRecent = approvals[approvals.length - 1];
+					// Handle both boolean and number (1/0) values
+					return Boolean(mostRecent.isApproved);
+				},
+				{
+					id: "aiApproval",
+					header: "AI Approved",
+					enableSorting: true,
+					cell: ({ getValue }) => (
+						<div className="text-sm text-gray-700 dark:text-gray-300">
+							{getValue() ? "Yes" : "No"}
+						</div>
+					),
+				}
+			),
 			columnHelper.accessor("createdAt", {
 				header: "Created At",
 				enableSorting: true,

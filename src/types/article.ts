@@ -81,5 +81,5 @@ export interface ChatGPTApprovedArticle extends Article {
 	newsRssRequestId?: number | null;
 	createdAt?: string;
 	stateAbbreviation?: string;
-	ArticleApproveds: ArticleApproved[];
+	ArticlesApproved02: ArticleApproved[];
 }

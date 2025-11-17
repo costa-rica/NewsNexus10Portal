@@ -113,7 +113,7 @@ export default function ApprovedChatGptPage() {
       publicationName: article.publicationName,
       publishedDate: article.publishedDate?.split("T")[0], // Format date for input
       url: article.url,
-      content: article.ArticleApproveds?.[0]?.textForPdfReport || "",
+      content: article.ArticlesApproved02?.[0]?.textForPdfReport || "",
       States: article.States,
     };
     setArticleForm(formData);
