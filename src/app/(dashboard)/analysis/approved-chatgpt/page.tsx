@@ -183,6 +183,15 @@ export default function ApprovedChatGptPage() {
       {/* Form Section */}
       <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/[0.03]">
         <div className="space-y-4">
+          {/* Article ID Header - only shown when editing */}
+          {articleForm?.id && (
+            <div className="mb-6 pb-4 border-b border-gray-200 dark:border-gray-700">
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                Article ID: {articleForm.id}
+              </h3>
+            </div>
+          )}
+
           {/* Publication Name */}
           <div className="flex flex-col gap-2">
             <label

@@ -119,6 +119,19 @@ const TableApprovedArticlesChatGpt: React.FC<TableApprovedArticlesChatGptProps> 
 					),
 				}
 			),
+			columnHelper.accessor(
+				(row) => Boolean(row.ArticleApprovedsIsApproved),
+				{
+					id: "humanApproval",
+					header: "Human Approved",
+					enableSorting: true,
+					cell: ({ getValue }) => (
+						<div className="text-sm text-gray-700 dark:text-gray-300">
+							{getValue() ? "Yes" : "No"}
+						</div>
+					),
+				}
+			),
 			columnHelper.accessor("createdAt", {
 				header: "Created At",
 				enableSorting: true,
