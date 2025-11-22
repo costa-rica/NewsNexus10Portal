@@ -29,6 +29,7 @@ export interface UserState {
 	token: string | null;
 	username: string | null;
 	email: string | null;
+	userId: number | null;
 	isAdmin: boolean;
 	stateArray: StateItem[];
 	articlesSummaryStatistics: Record<string, unknown>;
@@ -44,6 +45,7 @@ const initialState: UserState = {
 	token: null,
 	username: null,
 	email: null,
+	userId: null,
 	isAdmin: false,
 	stateArray: [],
 	articlesSummaryStatistics: {},
@@ -73,12 +75,13 @@ export const userSlice = createSlice({
 			state,
 			action: PayloadAction<{
 				token: string;
-				user: { username: string; email: string; isAdmin?: boolean };
+				user: { username: string; email: string; isAdmin?: boolean; id: number };
 			}>
 		) => {
 			state.token = action.payload.token;
 			state.username = action.payload.user.username || "some_name";
 			state.email = action.payload.user.email || "some_name@mail.com";
+			state.userId = action.payload.user.id;
 			state.isAdmin = action.payload.user.isAdmin || false;
 		},
 
@@ -86,6 +89,7 @@ export const userSlice = createSlice({
 			state.token = null;
 			state.username = null;
 			state.email = null;
+			state.userId = null;
 		},
 
 		updateStateArray: (state, action: PayloadAction<StateItem[]>) => {
@@ -137,6 +141,7 @@ export const userSlice = createSlice({
 			state.token = null;
 			state.username = null;
 			state.email = null;
+			state.userId = null;
 			state.isAdmin = false;
 			state.stateArray = [];
 			state.articlesSummaryStatistics = {};
