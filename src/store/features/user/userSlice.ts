@@ -34,6 +34,7 @@ export interface UserState {
 	stateArray: StateItem[];
 	articlesSummaryStatistics: Record<string, unknown>;
 	showSummaryStatistics: boolean;
+	showRecentlyApprovedByUser: boolean;
 	hideIrrelevant: boolean;
 	hideApproved?: boolean;
 	requestTableBodyParams: RequestTableBodyParams;
@@ -51,6 +52,7 @@ const initialState: UserState = {
 	stateArray: [],
 	articlesSummaryStatistics: {},
 	showSummaryStatistics: false,
+	showRecentlyApprovedByUser: false,
 	hideIrrelevant: false,
 	hideApproved: false,
 	requestTableBodyParams: {
@@ -119,6 +121,10 @@ export const userSlice = createSlice({
 			state.showSummaryStatistics = !state.showSummaryStatistics;
 		},
 
+		toggleShowRecentlyApprovedByUser: (state) => {
+			state.showRecentlyApprovedByUser = !state.showRecentlyApprovedByUser;
+		},
+
 		updateRequestTableBodyParams: (
 			state,
 			action: PayloadAction<Partial<RequestTableBodyParams>>
@@ -152,6 +158,7 @@ export const userSlice = createSlice({
 			state.stateArray = [];
 			state.articlesSummaryStatistics = {};
 			state.showSummaryStatistics = false;
+			state.showRecentlyApprovedByUser = false;
 			state.hideIrrelevant = false;
 			state.hideApproved = false;
 			state.requestTableBodyParams = {
@@ -188,6 +195,7 @@ export const {
 	toggleHideIrrelevant,
 	toggleHideApproved,
 	toggleShowSummaryStatistics,
+	toggleShowRecentlyApprovedByUser,
 	updateRequestTableBodyParams,
 	updateArticleTableBodyParams,
 	updateApprovedArticlesArray,

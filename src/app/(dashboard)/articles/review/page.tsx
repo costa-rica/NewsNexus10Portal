@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { SummaryStatistics } from "@/components/common/SummaryStatistics";
+import { RecentlyApprovedByUser } from "@/components/common/RecentlyApprovedByUser";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { updateStateArray } from "@/store/features/user/userSlice";
 import Input from "@/components/form/input/InputField";
@@ -12,6 +13,7 @@ import {
 	toggleHideApproved,
 	toggleHideIrrelevant,
 	toggleShowSummaryStatistics,
+	toggleShowRecentlyApprovedByUser,
 	updateArticleTableBodyParams,
 } from "@/store/features/user/userSlice";
 import { Modal } from "@/components/ui/modal";
@@ -521,6 +523,25 @@ export default function ReviewArticles() {
 			{/* Conditionally render Summary Statistics with close button */}
 			{userReducer.showSummaryStatistics && (
 				<SummaryStatistics onClose={() => dispatch(toggleShowSummaryStatistics())} />
+			)}
+
+			{/* Recently Approved By User Toggle Button - only show when component is hidden */}
+			{!userReducer.showRecentlyApprovedByUser && (
+				<div className="flex items-center gap-3">
+					<button
+						onClick={() => dispatch(toggleShowRecentlyApprovedByUser())}
+						className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700"
+					>
+						Show Recently Approved by Me
+					</button>
+				</div>
+			)}
+
+			{/* Conditionally render Recently Approved By User with close button */}
+			{userReducer.showRecentlyApprovedByUser && (
+				<RecentlyApprovedByUser
+					onClose={() => dispatch(toggleShowRecentlyApprovedByUser())}
+				/>
 			)}
 
 			{/* Article Approval Form */}
