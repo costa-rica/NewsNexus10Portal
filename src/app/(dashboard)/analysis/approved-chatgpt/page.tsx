@@ -1,7 +1,10 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import { useAppSelector, useAppDispatch } from "@/store/hooks";
-import { updateStateArray } from "@/store/features/user/userSlice";
+import {
+  updateStateArray,
+  toggleShowSummaryStatistics,
+} from "@/store/features/user/userSlice";
 import { SummaryStatistics } from "@/components/common/SummaryStatistics";
 import MultiSelect from "@/components/form/MultiSelect";
 import TableApprovedArticlesChatGpt from "@/components/tables/TableApprovedArticlesChatGpt";
@@ -26,7 +29,8 @@ interface ArticleForm {
 
 export default function ApprovedChatGptPage() {
   const dispatch = useAppDispatch();
-  const { token, stateArray = [] } = useAppSelector((state) => state.user);
+  const userReducer = useAppSelector((state) => state.user);
+  const { token, stateArray = [] } = userReducer;
 
   const [articleForm, setArticleForm] = useState<ArticleForm>({});
   const [articlesArray, setArticlesArray] = useState<ChatGPTApprovedArticle[]>(
@@ -173,12 +177,26 @@ export default function ApprovedChatGptPage() {
 
   return (
     <div className="flex flex-col gap-4 md:gap-6">
-      {/* Summary Statistics */}
-      <SummaryStatistics />
-
       <h1 className="text-title-xl text-gray-700 dark:text-gray-300">
         Approved ChatGPT Analysis
       </h1>
+
+      {/* Summary Statistics Toggle Button - only show when stats are hidden */}
+      {!userReducer.showSummaryStatistics && (
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => dispatch(toggleShowSummaryStatistics())}
+            className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700"
+          >
+            Show Summary Statistics
+          </button>
+        </div>
+      )}
+
+      {/* Conditionally render Summary Statistics with close button */}
+      {userReducer.showSummaryStatistics && (
+        <SummaryStatistics onClose={() => dispatch(toggleShowSummaryStatistics())} />
+      )}
 
       {/* Form Section */}
       <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/[0.03]">
