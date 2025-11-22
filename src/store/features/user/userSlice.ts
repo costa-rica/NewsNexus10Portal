@@ -33,6 +33,7 @@ export interface UserState {
 	isAdmin: boolean;
 	stateArray: StateItem[];
 	articlesSummaryStatistics: Record<string, unknown>;
+	showSummaryStatistics: boolean;
 	hideIrrelevant: boolean;
 	hideApproved?: boolean;
 	requestTableBodyParams: RequestTableBodyParams;
@@ -49,6 +50,7 @@ const initialState: UserState = {
 	isAdmin: false,
 	stateArray: [],
 	articlesSummaryStatistics: {},
+	showSummaryStatistics: false,
 	hideIrrelevant: false,
 	hideApproved: false,
 	requestTableBodyParams: {
@@ -113,6 +115,10 @@ export const userSlice = createSlice({
 			state.articleTableBodyParams.returnOnlyIsNotApproved = state.hideApproved;
 		},
 
+		toggleShowSummaryStatistics: (state) => {
+			state.showSummaryStatistics = !state.showSummaryStatistics;
+		},
+
 		updateRequestTableBodyParams: (
 			state,
 			action: PayloadAction<Partial<RequestTableBodyParams>>
@@ -145,6 +151,7 @@ export const userSlice = createSlice({
 			state.isAdmin = false;
 			state.stateArray = [];
 			state.articlesSummaryStatistics = {};
+			state.showSummaryStatistics = false;
 			state.hideIrrelevant = false;
 			state.hideApproved = false;
 			state.requestTableBodyParams = {
@@ -180,6 +187,7 @@ export const {
 	updateArticlesSummaryStatistics,
 	toggleHideIrrelevant,
 	toggleHideApproved,
+	toggleShowSummaryStatistics,
 	updateRequestTableBodyParams,
 	updateArticleTableBodyParams,
 	updateApprovedArticlesArray,

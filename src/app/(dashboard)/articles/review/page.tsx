@@ -11,6 +11,7 @@ import type { Article } from "@/types/article";
 import {
 	toggleHideApproved,
 	toggleHideIrrelevant,
+	toggleShowSummaryStatistics,
 	updateArticleTableBodyParams,
 } from "@/store/features/user/userSlice";
 import { Modal } from "@/components/ui/modal";
@@ -504,7 +505,23 @@ export default function ReviewArticles() {
 			<h1 className="text-title-xl text-gray-700 dark:text-gray-300">
 				Review Articles
 			</h1>
-			<SummaryStatistics />
+
+			{/* Summary Statistics Toggle Button - only show when stats are hidden */}
+			{!userReducer.showSummaryStatistics && (
+				<div className="flex items-center gap-3">
+					<button
+						onClick={() => dispatch(toggleShowSummaryStatistics())}
+						className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700"
+					>
+						Show Summary Statistics
+					</button>
+				</div>
+			)}
+
+			{/* Conditionally render Summary Statistics with close button */}
+			{userReducer.showSummaryStatistics && (
+				<SummaryStatistics onClose={() => dispatch(toggleShowSummaryStatistics())} />
+			)}
 
 			{/* Article Approval Form */}
 			<div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-white/[0.03]">
