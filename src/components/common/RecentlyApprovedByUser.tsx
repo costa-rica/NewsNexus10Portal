@@ -14,7 +14,7 @@ interface RecentlyApprovedByUserProps {
 export const RecentlyApprovedByUser: React.FC<
 	RecentlyApprovedByUserProps
 > = ({ onClose }) => {
-	const { token } = useAppSelector((state) => state.user);
+	const { token, username } = useAppSelector((state) => state.user);
 	const [articlesArray, setArticlesArray] = useState<
 		ApprovedArticleForComponent[]
 	>([]);
@@ -88,7 +88,7 @@ export const RecentlyApprovedByUser: React.FC<
 				{/* Header */}
 				<div className="mb-4 flex items-center justify-between">
 					<h2 className="text-lg font-semibold text-gray-800 dark:text-white">
-						Recently Approved by Me
+						Recently Approved by {username || "Me"}
 					</h2>
 					<button
 						onClick={fetchApprovedArticles}
