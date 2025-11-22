@@ -4,8 +4,10 @@ import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import {
   updateStateArray,
   toggleShowSummaryStatistics,
+  toggleShowRecentlyApprovedByUser,
 } from "@/store/features/user/userSlice";
 import { SummaryStatistics } from "@/components/common/SummaryStatistics";
+import { RecentlyApprovedByUser } from "@/components/common/RecentlyApprovedByUser";
 import MultiSelect from "@/components/form/MultiSelect";
 import TableApprovedArticlesChatGpt from "@/components/tables/TableApprovedArticlesChatGpt";
 import { Modal } from "@/components/ui/modal";
@@ -196,6 +198,25 @@ export default function ApprovedChatGptPage() {
       {/* Conditionally render Summary Statistics with close button */}
       {userReducer.showSummaryStatistics && (
         <SummaryStatistics onClose={() => dispatch(toggleShowSummaryStatistics())} />
+      )}
+
+      {/* Recently Approved By User Toggle Button - only show when component is hidden */}
+      {!userReducer.showRecentlyApprovedByUser && (
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => dispatch(toggleShowRecentlyApprovedByUser())}
+            className="rounded-lg bg-brand-500 px-6 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-600 dark:bg-brand-600 dark:hover:bg-brand-700"
+          >
+            Show Recently Approved by Me
+          </button>
+        </div>
+      )}
+
+      {/* Conditionally render Recently Approved By User with close button */}
+      {userReducer.showRecentlyApprovedByUser && (
+        <RecentlyApprovedByUser
+          onClose={() => dispatch(toggleShowRecentlyApprovedByUser())}
+        />
       )}
 
       {/* Form Section */}
