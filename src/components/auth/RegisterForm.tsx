@@ -32,7 +32,6 @@ export default function RegisterForm() {
 			}
 
 			const result = await response.json();
-			console.log("Fetched Data (states):", result);
 
 			if (result.statesArray && Array.isArray(result.statesArray)) {
 				const tempStatesArray = result.statesArray.map((stateObj: { id: number; name: string }) => ({
@@ -63,12 +62,7 @@ export default function RegisterForm() {
 	}, [fetchStateArray, userReducer.token, router]);
 
 	const handleClickRegister = async () => {
-		console.log(
-			"Register ---> API URL:",
-			`${process.env.NEXT_PUBLIC_API_BASE_URL}/users/register`
-		);
-		console.log("- handleClickRegister 👀");
-		console.log("- email:", email);
+
 
 		const bodyObj = { email, password };
 
@@ -91,7 +85,6 @@ export default function RegisterForm() {
 		}
 
 		if (response.ok) {
-			console.log(resJson);
 			resJson.email = email;
 			try {
 				dispatch(loginUser(resJson));
@@ -159,8 +152,6 @@ export default function RegisterForm() {
 										className="w-full"
 										size="sm"
 										onClick={() => {
-											// console.log("Submitted email:", email);
-											// console.log("Submitted password:", password);
 											handleClickRegister();
 										}}
 									>

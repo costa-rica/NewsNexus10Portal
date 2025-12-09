@@ -32,15 +32,12 @@ export default function LoginForm() {
 				`${process.env.NEXT_PUBLIC_API_BASE_URL}/states`
 			);
 
-			console.log(`Response status: ${response.status}`);
-
 			if (!response.ok) {
 				const errorText = await response.text();
 				throw new Error(`Server Error: ${errorText}`);
 			}
 
 			const result = await response.json();
-			console.log("Fetched Data (states):", result);
 
 			if (result.statesArray && Array.isArray(result.statesArray)) {
 				const tempStatesArray = result.statesArray.map((stateObj: { id: number; name: string }) => ({
@@ -71,12 +68,6 @@ export default function LoginForm() {
 	}, [fetchStateArray, userReducer.token, router]);
 
 	const handleClickLogin = async () => {
-		console.log(
-			"Login ---> API URL:",
-			`${process.env.NEXT_PUBLIC_API_BASE_URL}/users/login`
-		);
-		console.log("- handleClickLogin 👀");
-		console.log("- email:", email);
 
 		const bodyObj = { email, password };
 
@@ -99,8 +90,7 @@ export default function LoginForm() {
 		}
 
 		if (response.ok) {
-			// if (resJson.user.isAdminForKvManagerWebsite) {
-			// console.log(resJson);
+
 			resJson.email = email;
 			try {
 				dispatch(loginUser(resJson));
@@ -175,12 +165,8 @@ export default function LoginForm() {
 										type="button"
 										className="w-full"
 										size="sm"
-										// onClick={handleClickLogin}
 										onClick={() => {
-											// console.log("Submitted email:", email);
-											// console.log("Submitted password:", password);
 											handleClickLogin();
-											// You can call your submit logic or dispatch here
 										}}
 									>
 										Sign in
