@@ -13,14 +13,8 @@ import { loginUser, updateStateArray } from "@/store/features/user/userSlice";
 // export default function SignInForm() {
 export default function LoginForm() {
 	const [showPassword, setShowPassword] = useState(false);
-	const [email, emailSetter] = useState(
-		process.env.NEXT_PUBLIC_MODE === "workstation"
-			? "nickrodriguez@kineticmetrics.com"
-			: ""
-	);
-	const [password, passwordSetter] = useState(
-		process.env.NEXT_PUBLIC_MODE === "workstation" ? "test" : ""
-	);
+	const [email, emailSetter] = useState("");
+	const [password, passwordSetter] = useState("");
 	const dispatch = useAppDispatch();
 	const router = useRouter();
 	// const userReducer = useSelector((state) => state.user);
