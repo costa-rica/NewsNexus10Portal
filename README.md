@@ -8,7 +8,7 @@ While v08 was built with plain JavaScript, minimal styling, and without Next.js 
 
 This version starts from a clean npx create-next-app@latest base and adopts the architectural patterns and UI structure of the open-source free-nextjs-admin-dashboard-main project. That template provides a well-organized file system, reusable components, and responsive dashboard layouts — features that will serve as the foundation for implementing all existing NewsNexus08Portal content, workflows, and user interfaces in a structured, convention-driven way.
 
-The goal of NewsNexus10Portal is to faithfully re-create and enhance the functionality of the previous Portal within a modern Next.js environment, ultimately serving as the main front end for interacting with NewsNexusAPI09 and the broader News Nexus 09 microservice suite.
+The goal of NewsNexus10Portal is to faithfully re-create and enhance the functionality of the previous Portal within a modern Next.js environment, ultimately serving as the main front end for interacting with NewsNexus10API and the broader News Nexus 09 microservice suite.
 
 ### Overview TL;DR
 

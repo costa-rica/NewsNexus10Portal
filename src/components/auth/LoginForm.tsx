@@ -100,7 +100,7 @@ export default function LoginForm() {
 
 		if (response.ok) {
 			// if (resJson.user.isAdminForKvManagerWebsite) {
-			console.log(resJson);
+			// console.log(resJson);
 			resJson.email = email;
 			try {
 				dispatch(loginUser(resJson));
@@ -177,8 +177,8 @@ export default function LoginForm() {
 										size="sm"
 										// onClick={handleClickLogin}
 										onClick={() => {
-											console.log("Submitted email:", email);
-											console.log("Submitted password:", password);
+											// console.log("Submitted email:", email);
+											// console.log("Submitted password:", password);
 											handleClickLogin();
 											// You can call your submit logic or dispatch here
 										}}

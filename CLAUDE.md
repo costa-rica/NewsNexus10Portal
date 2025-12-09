@@ -98,7 +98,7 @@ SVG icons in `src/icons/` are imported as React components using `@svgr/webpack`
 
 ### Environment Variables
 
-- `NEXT_PUBLIC_API_BASE_URL`: Base URL for NewsNexusAPI09 backend
+- `NEXT_PUBLIC_API_BASE_URL`: Base URL for NewsNexus10API backend
 - `NEXT_PUBLIC_MODE`: Set to "workstation" to prefill login form for development
 
 ### TypeScript Configuration

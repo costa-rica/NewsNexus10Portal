@@ -35,7 +35,7 @@ export default function ResetPasswordForm({ token }: ResetPasswordFormProps) {
   };
 
   const handleSubmit = async () => {
-    console.log("Password reset requested with token:", token);
+    // console.log("Password reset requested with token:", token);
 
     // Validation
     if (!password) {
@@ -68,7 +68,7 @@ export default function ResetPasswordForm({ token }: ResetPasswordFormProps) {
         }
       );
 
-      console.log("Received response:", response.status);
+      // console.log("Received response:", response.status);
 
       let resJson = null;
       const contentType = response.headers.get("Content-Type");

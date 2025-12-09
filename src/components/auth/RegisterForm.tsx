@@ -159,8 +159,8 @@ export default function RegisterForm() {
 										className="w-full"
 										size="sm"
 										onClick={() => {
-											console.log("Submitted email:", email);
-											console.log("Submitted password:", password);
+											// console.log("Submitted email:", email);
+											// console.log("Submitted password:", password);
 											handleClickRegister();
 										}}
 									>
