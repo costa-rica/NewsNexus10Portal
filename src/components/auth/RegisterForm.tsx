@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { useRouter } from "next/navigation";
 import { loginUser, updateStateArray } from "@/store/features/user/userSlice";
 import { registerSchema, validateInput } from "@/lib/validationSchemas";
+import { logSecurityEvent, getValidationSeverity } from "@/lib/securityLogger";
 
 export default function RegisterForm() {
 	const [showPassword, setShowPassword] = useState(false);
@@ -68,8 +69,23 @@ export default function RegisterForm() {
 		const validationResult = validateInput(registerSchema, { email, password });
 
 		if (!validationResult.success) {
-			// Show first validation error to user
+			// SECURITY LOGGING: Log validation failure for monitoring
+			// This helps detect attack attempts and suspicious patterns
 			const firstError = Object.values(validationResult.errors)[0];
+
+			logSecurityEvent({
+				type: 'INVALID_INPUT',
+				severity: getValidationSeverity(firstError),
+				message: 'Registration form validation failed',
+				endpoint: '/users/register',
+				details: {
+					errors: validationResult.errors,
+					emailProvided: !!email,
+					passwordProvided: !!password,
+				},
+			});
+
+			// Show first validation error to user
 			alert(firstError);
 			return;
 		}

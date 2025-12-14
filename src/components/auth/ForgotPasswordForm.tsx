@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Modal } from "@/components/ui/modal";
 import { ModalInformationOk } from "@/components/ui/modal/ModalInformationOk";
 import { forgotPasswordSchema, validateInput } from "@/lib/validationSchemas";
+import { logSecurityEvent, getValidationSeverity } from "@/lib/securityLogger";
 
 export default function ForgotPasswordForm() {
   const [email, setEmail] = useState("");
@@ -37,8 +38,22 @@ export default function ForgotPasswordForm() {
     const validationResult = validateInput(forgotPasswordSchema, { email });
 
     if (!validationResult.success) {
-      // Show first validation error to user
+      // SECURITY LOGGING: Log validation failure for monitoring
+      // This helps detect attack attempts and suspicious patterns
       const firstError = Object.values(validationResult.errors)[0];
+
+      logSecurityEvent({
+        type: 'INVALID_INPUT',
+        severity: getValidationSeverity(firstError),
+        message: 'Forgot password form validation failed',
+        endpoint: '/users/request-password-reset',
+        details: {
+          errors: validationResult.errors,
+          emailProvided: !!email,
+        },
+      });
+
+      // Show first validation error to user
       showInfoModal("Invalid Email", firstError, "warning");
       return;
     }

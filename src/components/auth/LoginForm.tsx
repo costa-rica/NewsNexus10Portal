@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { useRouter } from "next/navigation";
 import { loginUser, updateStateArray } from "@/store/features/user/userSlice";
 import { loginSchema, validateInput } from "@/lib/validationSchemas";
+import { logSecurityEvent, getValidationSeverity } from "@/lib/securityLogger";
 
 // export default function SignInForm() {
 export default function LoginForm() {
@@ -68,8 +69,23 @@ export default function LoginForm() {
 		const validationResult = validateInput(loginSchema, { email, password });
 
 		if (!validationResult.success) {
-			// Show first validation error to user
+			// SECURITY LOGGING: Log validation failure for monitoring
+			// This helps detect attack attempts and suspicious patterns
 			const firstError = Object.values(validationResult.errors)[0];
+
+			logSecurityEvent({
+				type: 'INVALID_INPUT',
+				severity: getValidationSeverity(firstError),
+				message: 'Login form validation failed',
+				endpoint: '/users/login',
+				details: {
+					errors: validationResult.errors,
+					emailProvided: !!email,
+					passwordProvided: !!password,
+				},
+			});
+
+			// Show first validation error to user
 			alert(firstError);
 			return;
 		}

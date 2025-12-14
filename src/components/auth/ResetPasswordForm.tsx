@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { Modal } from "@/components/ui/modal";
 import { ModalInformationOk } from "@/components/ui/modal/ModalInformationOk";
 import { resetPasswordSchema, validateInput } from "@/lib/validationSchemas";
+import { logSecurityEvent, getValidationSeverity } from "@/lib/securityLogger";
 
 interface ResetPasswordFormProps {
   token: string;
@@ -43,8 +44,23 @@ export default function ResetPasswordForm({ token }: ResetPasswordFormProps) {
     const validationResult = validateInput(resetPasswordSchema, { token, password });
 
     if (!validationResult.success) {
-      // Show first validation error to user
+      // SECURITY LOGGING: Log validation failure for monitoring
+      // This helps detect attack attempts and suspicious patterns
       const firstError = Object.values(validationResult.errors)[0];
+
+      logSecurityEvent({
+        type: validationResult.errors.token ? 'INVALID_TOKEN' : 'INVALID_INPUT',
+        severity: getValidationSeverity(firstError),
+        message: 'Reset password form validation failed',
+        endpoint: `/users/reset-password/${token}`,
+        details: {
+          errors: validationResult.errors,
+          passwordProvided: !!password,
+          tokenProvided: !!token,
+        },
+      });
+
+      // Show first validation error to user
       showInfoModal("Validation Error", firstError, "warning");
       return;
     }
