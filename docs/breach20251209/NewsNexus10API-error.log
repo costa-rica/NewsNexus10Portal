@@ -1,0 +1,28 @@
+2025-12-09 04:54 +00:00: [NewsNexus10] TypeError: Cannot read properties of null (reading 'id')
+2025-12-09 04:54 +00:00:     at /home/nick/applications/NewsNexus10API/src/routes/articles.js:744:54
+2025-12-09 04:58 +00:00: Deprecation warning: value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are discouraged. Please refer to http://momentjs.com/guides/#/warnings/js-date/ for more info.
+2025-12-09 04:58 +00:00: Arguments: 
+2025-12-09 04:58 +00:00: [0] _isAMomentObject: true, _isUTC: false, _useUTC: false, _l: undefined, _i: Invalid date, _f: undefined, _strict: undefined, _locale: [object Object]
+2025-12-09 04:58 +00:00: Error
+2025-12-09 04:58 +00:00:     at hooks.createFromInputFallback (/home/nick/applications/NewsNexus10Db/node_modules/moment/moment.js:324:25)
+2025-12-09 04:58 +00:00:     at configFromString (/home/nick/applications/NewsNexus10Db/node_modules/moment/moment.js:2613:19)
+2025-12-09 04:58 +00:00:     at configFromInput (/home/nick/applications/NewsNexus10Db/node_modules/moment/moment.js:3056:13)
+2025-12-09 04:58 +00:00:     at prepareConfig (/home/nick/applications/NewsNexus10Db/node_modules/moment/moment.js:3039:13)
+2025-12-09 04:58 +00:00:     at createFromConfig (/home/nick/applications/NewsNexus10Db/node_modules/moment/moment.js:3006:44)
+2025-12-09 04:58 +00:00:     at createLocalOrUTC (/home/nick/applications/NewsNexus10Db/node_modules/moment/moment.js:3100:16)
+2025-12-09 04:58 +00:00:     at createLocal (/home/nick/applications/NewsNexus10Db/node_modules/moment/moment.js:3104:16)
+2025-12-09 04:58 +00:00:     at hooks (/home/nick/applications/NewsNexus10Db/node_modules/moment/moment.js:16:29)
+2025-12-09 04:58 +00:00:     at NewsApiRequest._sanitize (/home/nick/applications/NewsNexus10Db/node_modules/sequelize/lib/data-types.js:356:14)
+2025-12-09 04:58 +00:00:     at NewsApiRequest.set (/home/nick/applications/NewsNexus10Db/node_modules/sequelize/lib/model.js:2286:59)
+2025-12-09 04:58 +00:00:     at NewsApiRequest.set (/home/nick/applications/NewsNexus10Db/node_modules/sequelize/lib/model.js:2241:18)
+2025-12-09 04:58 +00:00:     at NewsApiRequest._initValues (/home/nick/applications/NewsNexus10Db/node_modules/sequelize/lib/model.js:156:10)
+2025-12-09 04:58 +00:00:     at new Model (/home/nick/applications/NewsNexus10Db/node_modules/sequelize/lib/model.js:116:10)
+2025-12-09 04:58 +00:00:     at new NewsApiRequest (/home/nick/applications/NewsNexus10Db/dist/models/NewsApiRequest.js:7:1)
+2025-12-09 04:58 +00:00:     at NewsApiRequest.build (/home/nick/applications/NewsNexus10Db/node_modules/sequelize/lib/model.js:1344:12)
+2025-12-09 04:58 +00:00:     at /home/nick/applications/NewsNexus10Db/node_modules/sequelize/lib/model.js:1563:52
+2025-12-09 04:58 +00:00:     at Array.map (<anonymous>)
+2025-12-09 04:58 +00:00:     at NewsApiRequest.bulkCreate (/home/nick/applications/NewsNexus10Db/node_modules/sequelize/lib/model.js:1563:31)
+2025-12-09 04:58 +00:00:     at processCSVFiles (/home/nick/applications/NewsNexus10API/src/modules/adminDb.js:121:35)
+2025-12-09 04:58 +00:00:     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2025-12-09 04:58 +00:00:     at async readAndAppendDbTables (/home/nick/applications/NewsNexus10API/src/modules/adminDb.js:140:29)
+2025-12-09 04:58 +00:00:     at async /home/nick/applications/NewsNexus10API/src/routes/adminDb.js:296:22

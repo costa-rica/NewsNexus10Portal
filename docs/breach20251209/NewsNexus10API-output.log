@@ -1,0 +1,539 @@
+
+$ the-404> _
+PM2 Managed Apps
+
+View and manage apps running on the connected server
+CPU: 14.1% | Memory: 100.1 MB
+Uptime: 20431d 16h | Restarts: 0
+	
+8000
+	
+CPU: 23.2% | Memory: 130.5 MB
+Uptime: 20431d 16h | Restarts: 0
+	
+8001
+	
+CPU: 4.2% | Memory: 69.5 MB
+Uptime: 20431d 16h | Restarts: 0
+	
+8002
+	
+Logs: NewsNexus10API
+
+2025-12-09 04:58 +00:00: [NewsNexus10] Imported 210426 records into NewsApiRequestWebsiteDomainContract
+2025-12-09 04:58 +00:00: [NewsNexus10] Importing data into table: NewsArticleAggregatorSource
+2025-12-09 04:58 +00:00: [NewsNexus10] Imported 9 records into NewsArticleAggregatorSource
+2025-12-09 04:58 +00:00: [NewsNexus10] Importing data into table: Report
+2025-12-09 04:58 +00:00: [NewsNexus10] Imported 42 records into Report
+2025-12-09 04:58 +00:00: [NewsNexus10] Importing data into table: State
+2025-12-09 04:58 +00:00: [NewsNexus10] Imported 65 records into State
+2025-12-09 04:58 +00:00: [NewsNexus10] Importing data into table: User
+2025-12-09 04:58 +00:00: [NewsNexus10] Imported 6 records into User
+2025-12-09 04:58 +00:00: [NewsNexus10] Importing data into table: WebsiteDomain
+2025-12-09 04:58 +00:00: [NewsNexus10] Imported 1015 records into WebsiteDomain
+2025-12-09 04:58 +00:00: [NewsNexus10] Re-enabling foreign key constraints...
+2025-12-09 04:58 +00:00: [NewsNexus10] Temporary files deleted.
+2025-12-09 04:58 +00:00: [NewsNexus10] { success: true, message: 'Successfully imported 1710298 records.' }
+2025-12-09 04:58 +00:00: [0mPOST /admin-db/import-db-backup [32m200[0m 206407.143 ms - 66[0m
+2025-12-09 04:59 +00:00: [NewsNexus10] - in GET /admin-db/db-row-counts-by-table
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: User
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: ArticleKeywordContract
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: EntityWhoCategorizedArticle
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: ArtificialIntelligence
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: State
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: ArticleStateContract
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: Report
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: ArticleReportContract
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: ArticleReviewed
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: ArticleApproved
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: ArticleDuplicateAnalysis
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: NewsApiRequest
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: ArticleContent
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: NewsRssRequest
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: Keyword
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: NewsArticleAggregatorSource
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: Article
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: EntityWhoFoundArticle
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: NewsArticleAggregatorSourceStateContract
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: ArticleIsRelevant
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: NewsApiRequestWebsiteDomainContract
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: WebsiteDomain
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: ArticleEntityWhoCategorizedArticleContract
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: ArticleEntityWhoCategorizedArticleContracts02
+2025-12-09 04:59 +00:00: [NewsNexus10] Checking table: ArticlesApproved02
+2025-12-09 04:59 +00:00: [0mGET /admin-db/db-row-counts-by-table [32m200[0m 3196.916 ms - 1343[0m
+2025-12-09 04:59 +00:00: [NewsNexus10] - in GET /reports
+2025-12-09 04:59 +00:00: [NewsNexus10] - GET /articles/approved
+2025-12-09 04:59 +00:00: [0mGET /reports [32m200[0m 1325.507 ms - 1150598[0m
+2025-12-09 04:59 +00:00: [NewsNexus10] - articlesArray.length (before filtering): 207869
+2025-12-09 04:59 +00:00: [NewsNexus10] - approvedArticlesArrayModified.length (after filtering): 4149
+2025-12-09 04:59 +00:00: [0mGET /articles/approved [32m200[0m 13013.173 ms - 11051003[0m
+2025-12-09 05:02 +00:00: [0mGET / [32m200[0m 45.330 ms - 1037[0m
+2025-12-09 05:02 +00:00: [0mGET /favicon.ico [33m404[0m 2.004 ms - 150[0m
+2025-12-09 05:03 +00:00: [0mGET /states [32m200[0m 6.817 ms - 8360[0m
+2025-12-09 05:05 +00:00: [0mGET /robots.txt [33m404[0m 0.977 ms - 149[0m
+2025-12-09 05:05 +00:00: [0mGET / [32m200[0m 2.377 ms - 1037[0m
+2025-12-09 05:07 +00:00: [0mGET /app_dev.php/_profiler/open?file=app/config/config.yml [33m404[0m 0.910 ms - 165[0m
+2025-12-09 05:08 +00:00: [0mGET / [32m200[0m 1.262 ms - 1037[0m
+2025-12-09 05:08 +00:00: [0mGET / [32m200[0m 0.983 ms - 1037[0m
+2025-12-09 05:08 +00:00: [0mGET /favicon.ico [33m404[0m 0.583 ms - 150[0m
+2025-12-09 05:10 +00:00: [0mGET / [32m200[0m 1.281 ms - 1037[0m
+2025-12-09 05:10 +00:00: [0mGET /favicon.ico [33m404[0m 0.565 ms - 150[0m
+2025-12-09 05:10 +00:00: [0mGET /favicon.png [33m404[0m 0.725 ms - 150[0m
+2025-12-09 05:13 +00:00: [0mGET /robots.txt [33m404[0m 0.625 ms - 149[0m
+2025-12-09 05:17 +00:00: [0mPOST / [33m404[0m 1.377 ms - 140[0m
+2025-12-09 05:20 +00:00: [0mGET /robots.txt [33m404[0m 0.701 ms - 149[0m
+2025-12-09 05:21 +00:00: [0mGET / [32m200[0m 1.344 ms - 1037[0m
+2025-12-09 05:21 +00:00: [0mGET / [32m200[0m 0.939 ms - 1037[0m
+2025-12-09 05:21 +00:00: [0mGET /.env [33m404[0m 0.864 ms - 143[0m
+2025-12-09 05:21 +00:00: [0mGET /phpinfo [33m404[0m 0.488 ms - 146[0m
+2025-12-09 05:21 +00:00: [0mGET /phpinfo.php [33m404[0m 0.512 ms - 150[0m
+2025-12-09 05:21 +00:00: [0mGET /portal/.env [33m404[0m 0.503 ms - 150[0m
+2025-12-09 05:21 +00:00: [0mGET /env/.env [33m404[0m 0.484 ms - 147[0m
+2025-12-09 05:21 +00:00: [0mGET /api/.env [33m404[0m 0.455 ms - 147[0m
+2025-12-09 05:21 +00:00: [0mGET /app/.env [33m404[0m 0.477 ms - 147[0m
+2025-12-09 05:21 +00:00: [0mGET /dev/.env [33m404[0m 0.537 ms - 147[0m
+2025-12-09 05:21 +00:00: [0mGET /new/.env [33m404[0m 0.515 ms - 147[0m
+2025-12-09 05:21 +00:00: [0mGET /new/.env [33m404[0m 0.527 ms - 147[0m
+2025-12-09 05:21 +00:00: [0mGET /new/.env.local [33m404[0m 0.629 ms - 153[0m
+2025-12-09 05:21 +00:00: [0mGET /new/.env.production [33m404[0m 0.478 ms - 158[0m
+2025-12-09 05:21 +00:00: [0mGET /new/.env.staging [33m404[0m 0.779 ms - 155[0m
+2025-12-09 05:21 +00:00: [0mGET /new/.env.staging [33m404[0m 0.812 ms - 155[0m
+2025-12-09 05:21 +00:00: [0mGET /_phpinfo.php [33m404[0m 0.466 ms - 151[0m
+2025-12-09 05:21 +00:00: [0mGET /_profiler/phpinfo [33m404[0m 0.485 ms - 156[0m
+2025-12-09 05:21 +00:00: [0mGET /_profiler/phpinfo/info.php [33m404[0m 0.473 ms - 165[0m
+2025-12-09 05:21 +00:00: [0mGET /_profiler/phpinfo/phpinfo.php [33m404[0m 1.138 ms - 168[0m
+2025-12-09 05:21 +00:00: [0mGET /wp-config [33m404[0m 0.539 ms - 148[0m
+2025-12-09 05:21 +00:00: [0mGET /aws-secret.yaml [33m404[0m 0.500 ms - 154[0m
+2025-12-09 05:22 +00:00: [0mGET /aws-secret.yaml [33m404[0m 0.452 ms - 154[0m
+2025-12-09 05:22 +00:00: [0mGET /awstats/.env [33m404[0m 0.489 ms - 151[0m
+2025-12-09 05:22 +00:00: [0mGET /conf/.env [33m404[0m 0.415 ms - 148[0m
+2025-12-09 05:22 +00:00: [0mGET /cron/.env [33m404[0m 0.408 ms - 148[0m
+2025-12-09 05:22 +00:00: [0mGET /www/.env [33m404[0m 0.456 ms - 147[0m
+2025-12-09 05:22 +00:00: [0mGET /docker/.env [33m404[0m 0.423 ms - 150[0m
+2025-12-09 05:22 +00:00: [0mGET /docker/app/.env [33m404[0m 0.417 ms - 154[0m
+2025-12-09 05:22 +00:00: [0mGET /env.backup [33m404[0m 1.319 ms - 149[0m
+2025-12-09 05:22 +00:00: [0mGET /xampp/phpinfo.php [33m404[0m 0.513 ms - 156[0m
+2025-12-09 05:22 +00:00: [0mGET /lara/info.php [33m404[0m 0.858 ms - 152[0m
+2025-12-09 05:22 +00:00: [0mGET /lara/phpinfo.php [33m404[0m 0.731 ms - 155[0m
+2025-12-09 05:22 +00:00: [0mGET /laravel/info.php [33m404[0m 0.481 ms - 155[0m
+2025-12-09 05:22 +00:00: [0mGET /.vscode/.env [33m404[0m 0.927 ms - 151[0m
+2025-12-09 05:22 +00:00: [0mGET / [32m200[0m 1.128 ms - 1037[0m
+2025-12-09 05:22 +00:00: [0mGET /js/.env [33m404[0m 0.779 ms - 146[0m
+2025-12-09 05:22 +00:00: [0mGET /laravel/.env [33m404[0m 0.419 ms - 151[0m
+2025-12-09 05:22 +00:00: [0mGET /laravel/core/.env [33m404[0m 0.423 ms - 156[0m
+2025-12-09 05:22 +00:00: [0mGET /mail/.env [33m404[0m 0.426 ms - 148[0m
+2025-12-09 05:22 +00:00: [0mGET /mail/.env [33m404[0m 0.515 ms - 148[0m
+2025-12-09 05:22 +00:00: [0mGET /mail/.env [33m404[0m 0.426 ms - 148[0m
+2025-12-09 05:22 +00:00: [0mGET /mailer/.env [33m404[0m 0.467 ms - 150[0m
+2025-12-09 05:22 +00:00: [0mGET /nginx/.env [33m404[0m 0.604 ms - 149[0m
+2025-12-09 05:22 +00:00: [0mGET /public/.env [33m404[0m 1.527 ms - 150[0m
+2025-12-09 05:22 +00:00: [0mGET /site/.env [33m404[0m 0.542 ms - 148[0m
+2025-12-09 05:22 +00:00: [0mGET /xampp/.env [33m404[0m 0.418 ms - 149[0m
+2025-12-09 05:22 +00:00: [0mGET /main/.env [33m404[0m 0.501 ms - 148[0m
+2025-12-09 05:22 +00:00: [0mGET /node_modules/.env [33m404[0m 0.501 ms - 156[0m
+2025-12-09 05:22 +00:00: [0mGET /kyc/.env [33m404[0m 0.430 ms - 147[0m
+2025-12-09 05:22 +00:00: [0mGET /admin/.env [33m404[0m 0.433 ms - 149[0m
+2025-12-09 05:22 +00:00: [0mGET /admin/.env [33m404[0m 0.532 ms - 149[0m
+2025-12-09 05:22 +00:00: [0mGET /prod/.env [33m404[0m 0.451 ms - 148[0m
+2025-12-09 05:22 +00:00: [0mGET /.env.bak [33m404[0m 0.420 ms - 147[0m
+2025-12-09 05:22 +00:00: [0mGET /api/shared/config/config.env [33m404[0m 1.053 ms - 167[0m
+2025-12-09 05:22 +00:00: [0mGET /api/shared/config.env [33m404[0m 0.412 ms - 160[0m
+2025-12-09 05:22 +00:00: [0mGET /config.env [33m404[0m 0.682 ms - 149[0m
+2025-12-09 05:22 +00:00: [0mGET /website/.env [33m404[0m 0.452 ms - 151[0m
+2025-12-09 05:22 +00:00: [0mGET /development/.env [33m404[0m 0.412 ms - 155[0m
+2025-12-09 05:23 +00:00: [0mGET /backend/.env [33m404[0m 0.515 ms - 151[0m
+2025-12-09 05:23 +00:00: [0mGET /api/shared/config/.env [33m404[0m 0.459 ms - 161[0m
+2025-12-09 05:23 +00:00: [0mGET /api/shared/.env [33m404[0m 0.454 ms - 154[0m
+2025-12-09 05:23 +00:00: [0mGET /api/config.env [33m404[0m 0.837 ms - 153[0m
+2025-12-09 05:23 +00:00: [0mGET /service/email_service.py [33m404[0m 0.489 ms - 163[0m
+2025-12-09 05:23 +00:00: [0mGET /node/.env_example [33m404[0m 0.449 ms - 156[0m
+2025-12-09 05:23 +00:00: [0mGET /.env.production.local [33m404[0m 0.478 ms - 160[0m
+2025-12-09 05:23 +00:00: [0mGET /.env.local [33m404[0m 0.455 ms - 149[0m
+2025-12-09 05:23 +00:00: [0mGET /.env.example [33m404[0m 0.526 ms - 151[0m
+2025-12-09 05:23 +00:00: [0mGET /.env.stage [33m404[0m 0.464 ms - 149[0m
+2025-12-09 05:23 +00:00: [0mGET /server/config/database.js [33m404[0m 0.483 ms - 164[0m
+2025-12-09 05:23 +00:00: [0mGET /.env.old [33m404[0m 0.981 ms - 147[0m
+2025-12-09 05:23 +00:00: [0mGET /.env_sample [33m404[0m 0.518 ms - 150[0m
+2025-12-09 05:23 +00:00: [0mGET /scripts/nodemailer.js [33m404[0m 0.422 ms - 160[0m
+2025-12-09 05:23 +00:00: [0mGET /.env.prod [33m404[0m 0.456 ms - 148[0m
+2025-12-09 05:23 +00:00: [0mGET /crm/.env [33m404[0m 0.466 ms - 147[0m
+2025-12-09 05:23 +00:00: [0mGET /local/.env [33m404[0m 0.413 ms - 149[0m
+2025-12-09 05:23 +00:00: [0mGET /core/.env [33m404[0m 0.416 ms - 148[0m
+2025-12-09 05:23 +00:00: [0mGET /apps/.env [33m404[0m 1.278 ms - 148[0m
+2025-12-09 05:23 +00:00: [0mGET /application/.env [33m404[0m 0.429 ms - 155[0m
+2025-12-09 05:23 +00:00: [0mGET /web/.env [33m404[0m 0.428 ms - 147[0m
+2025-12-09 05:23 +00:00: [0mGET /.aws/credentials [33m404[0m 0.445 ms - 155[0m
+2025-12-09 05:23 +00:00: [0mGET /wp-config.php.bak [33m404[0m 0.423 ms - 156[0m
+2025-12-09 05:23 +00:00: [0mGET /info.php [33m404[0m 0.422 ms - 147[0m
+2025-12-09 05:23 +00:00: [0mGET /dashboard/phpinfo.php [33m404[0m 0.423 ms - 160[0m
+2025-12-09 05:23 +00:00: [0mGET /static/js/main.141b0494.js [33m404[0m 0.444 ms - 165[0m
+2025-12-09 05:23 +00:00: [0mGET /static/js/2.ca066a4b.chunk.js [33m404[0m 0.445 ms - 168[0m
+2025-12-09 05:23 +00:00: [0mGET /static/js/main.e85f7a37.js [33m404[0m 0.415 ms - 165[0m
+2025-12-09 05:23 +00:00: [0mGET /admin/server_info.php [33m404[0m 0.426 ms - 160[0m
+2025-12-09 05:23 +00:00: [0mGET /server_info.php [33m404[0m 0.440 ms - 154[0m
+2025-12-09 05:23 +00:00: [0mGET /app_dev.php/_profiler/phpinfo [33m404[0m 0.414 ms - 168[0m
+2025-12-09 05:23 +00:00: [0mGET /test.php [33m404[0m 0.422 ms - 147[0m
+2025-12-09 05:23 +00:00: [0mGET /server-info [33m404[0m 0.431 ms - 150[0m
+2025-12-09 05:23 +00:00: [0mGET /server-info.php [33m404[0m 0.424 ms - 154[0m
+2025-12-09 05:23 +00:00: [0mGET /secured/phpinfo.php [33m404[0m 0.536 ms - 158[0m
+2025-12-09 05:23 +00:00: [0mGET /secured/phpinfo.php [33m404[0m 0.419 ms - 158[0m
+2025-12-09 05:23 +00:00: [0mGET /config.js [33m404[0m 0.449 ms - 148[0m
+2025-12-09 05:23 +00:00: [0mGET /server.js [33m404[0m 0.459 ms - 148[0m
+2025-12-09 05:23 +00:00: [0mGET /appsettings.json [33m404[0m 0.435 ms - 155[0m
+2025-12-09 05:23 +00:00: [0mGET /shared/config/config.js [33m404[0m 0.423 ms - 162[0m
+2025-12-09 05:23 +00:00: [0mGET /config/aws.yml [33m404[0m 0.451 ms - 153[0m
+2025-12-09 05:23 +00:00: [0mGET /settings.py [33m404[0m 0.423 ms - 150[0m
+2025-12-09 05:23 +00:00: [0mGET /config.json [33m404[0m 0.531 ms - 150[0m
+2025-12-09 05:23 +00:00: [0mGET /main.js [33m404[0m 0.892 ms - 146[0m
+2025-12-09 05:23 +00:00: [0mGET /config/constants.js [33m404[0m 0.708 ms - 158[0m
+2025-12-09 05:23 +00:00: [0mGET /application.properties [33m404[0m 0.502 ms - 161[0m
+2025-12-09 05:23 +00:00: [0mGET /public/js/main.js [33m404[0m 0.458 ms - 156[0m
+2025-12-09 05:23 +00:00: [0mGET /js/main.js [33m404[0m 0.473 ms - 149[0m
+2025-12-09 05:23 +00:00: [0mGET /?phpinfo=1 [32m200[0m 1.311 ms - 1037[0m
+2025-12-09 05:23 +00:00: [0mGET /storage/logs/laravel.log [33m404[0m 0.423 ms - 163[0m
+2025-12-09 05:23 +00:00: [0mGET /karma.conf.json [33m404[0m 0.461 ms - 154[0m
+2025-12-09 05:23 +00:00: [0mGET /swagger.json [33m404[0m 0.422 ms - 151[0m
+2025-12-09 05:23 +00:00: [0mGET /swagger.js [33m404[0m 0.442 ms - 149[0m
+2025-12-09 05:23 +00:00: [0mGET /gatsby-config.js [33m404[0m 1.128 ms - 155[0m
+2025-12-09 05:23 +00:00: [0mGET /backend/config/default.yml [33m404[0m 0.628 ms - 165[0m
+2025-12-09 05:23 +00:00: [0mGET /app.py [33m404[0m 0.474 ms - 145[0m
+2025-12-09 05:23 +00:00: [0mGET /admin/controllers/merchant.js [33m404[0m 0.423 ms - 168[0m
+2025-12-09 05:23 +00:00: [0mGET /admin/controllers/partner.js [33m404[0m 0.527 ms - 167[0m
+2025-12-09 05:23 +00:00: [0mGET /api/config.js [33m404[0m 0.416 ms - 152[0m
+2025-12-09 05:23 +00:00: [0mGET /api/objects/codes.php.save [33m404[0m 0.413 ms - 165[0m
+2025-12-09 05:23 +00:00: [0mGET /apis/config/config.js [33m404[0m 1.128 ms - 160[0m
+2025-12-09 05:23 +00:00: [0mGET /apis/controllers/users.js [33m404[0m 0.441 ms - 164[0m
+2025-12-09 05:23 +00:00: [0mGET /app.js [33m404[0m 0.418 ms - 145[0m
+2025-12-09 05:23 +00:00: [0mGET /backend/config/development.yml [33m404[0m 0.434 ms - 169[0m
+2025-12-09 05:23 +00:00: [0mGET /cloud/Scraper.js [33m404[0m 0.447 ms - 155[0m
+2025-12-09 05:23 +00:00: [0mGET /config/application.yml [33m404[0m 0.402 ms - 161[0m
+2025-12-09 05:23 +00:00: [0mGET /config/storage.yml [33m404[0m 0.413 ms - 157[0m
+2025-12-09 05:23 +00:00: [0mGET /configs/routes-4aug.js [33m404[0m 0.407 ms - 161[0m
+2025-12-09 05:23 +00:00: [0mGET /configs/routes.js [33m404[0m 0.400 ms - 156[0m
+2025-12-09 05:23 +00:00: [0mGET /configs/s3_config.json [33m404[0m 0.426 ms - 161[0m
+2025-12-09 05:23 +00:00: [0mGET /controller/admin/post.js [33m404[0m 0.432 ms - 163[0m
+2025-12-09 05:23 +00:00: [0mGET /controller/api/post.js [33m404[0m 0.404 ms - 161[0m
+2025-12-09 05:23 +00:00: [0mGET /controllers/settings.js [33m404[0m 0.466 ms - 162[0m
+2025-12-09 05:23 +00:00: [0mGET /getcpuutil.php-bakworking [33m404[0m 0.420 ms - 164[0m
+2025-12-09 05:23 +00:00: [0mGET /helper.js [33m404[0m 0.433 ms - 148[0m
+2025-12-09 05:23 +00:00: [0mGET /helper/EmailHelper.js [33m404[0m 0.439 ms - 160[0m
+2025-12-09 05:23 +00:00: [0mGET /index.js [33m404[0m 0.439 ms - 147[0m
+2025-12-09 05:23 +00:00: [0mGET /index.html [33m404[0m 0.425 ms - 149[0m
+2025-12-09 05:23 +00:00: [0mGET /my_env/chakaash.py [33m404[0m 0.444 ms - 157[0m
+2025-12-09 05:23 +00:00: [0mGET /my_env/newsletter.py [33m404[0m 0.424 ms - 159[0m
+2025-12-09 05:23 +00:00: [0mGET /my_env/palash.py [33m404[0m 0.426 ms - 155[0m
+2025-12-09 05:23 +00:00: [0mGET /mytest/astech_robot.js [33m404[0m 0.413 ms - 161[0m
+2025-12-09 05:23 +00:00: [0mGET /partner/config/config.js [33m404[0m 0.410 ms - 163[0m
+2025-12-09 05:23 +00:00: [0mGET /config/settings.json [33m404[0m 0.417 ms - 159[0m
+2025-12-09 05:23 +00:00: [0mGET /config/settings.local [33m404[0m 0.445 ms - 160[0m
+2025-12-09 05:23 +00:00: [0mGET /.circleci/configs/development.yml [33m404[0m 0.445 ms - 172[0m
+2025-12-09 05:23 +00:00: [0mGET /config/settings.prod [33m404[0m 0.430 ms - 159[0m
+2025-12-09 05:23 +00:00: [0mGET /app/config/parameters.yml [33m404[0m 0.452 ms - 164[0m
+2025-12-09 05:23 +00:00: [0mGET /config/parameters.yml [33m404[0m 0.395 ms - 160[0m
+2025-12-09 05:23 +00:00: [0mGET /user/config/config.js [33m404[0m 0.932 ms - 160[0m
+2025-12-09 05:23 +00:00: [0mGET /user/controllers/index.js [33m404[0m 0.395 ms - 164[0m
+2025-12-09 05:23 +00:00: [0mGET /.AWS_/credentials [33m404[0m 0.416 ms - 156[0m
+2025-12-09 05:24 +00:00: [0mGET /config/local.yml [33m404[0m 0.439 ms - 155[0m
+2025-12-09 05:24 +00:00: [0mGET /backend/config/settings.yml [33m404[0m 0.465 ms - 166[0m
+2025-12-09 05:24 +00:00: [0mGET /api/config/config.yml [33m404[0m 0.432 ms - 160[0m
+2025-12-09 05:24 +00:00: [0mGET /admin/config [33m404[0m 0.468 ms - 151[0m
+2025-12-09 05:24 +00:00: [0mGET /.travis.yml [33m404[0m 0.458 ms - 150[0m
+2025-12-09 05:24 +00:00: [0mGET /aws.yml [33m404[0m 0.423 ms - 146[0m
+2025-12-09 05:24 +00:00: [0mGET /sms.py [33m404[0m 0.432 ms - 145[0m
+2025-12-09 05:24 +00:00: [0mGET /config/config.json [33m404[0m 0.410 ms - 157[0m
+2025-12-09 05:24 +00:00: [0mGET /main.yml [33m404[0m 0.416 ms - 147[0m
+2025-12-09 05:24 +00:00: [0mGET /helpers/utility.js [33m404[0m 0.500 ms - 157[0m
+2025-12-09 05:24 +00:00: [0mGET /server/s3.js [33m404[0m 0.611 ms - 151[0m
+2025-12-09 05:24 +00:00: [0mGET /s3.js [33m404[0m 0.442 ms - 144[0m
+2025-12-09 05:24 +00:00: [0mGET /debug/default/view [33m404[0m 0.444 ms - 157[0m
+2025-12-09 05:24 +00:00: [0mGET /aws/credentials [33m404[0m 0.424 ms - 154[0m
+2025-12-09 05:24 +00:00: [0mGET /.aws/config [33m404[0m 0.503 ms - 150[0m
+2025-12-09 05:24 +00:00: [0mGET /config/stripe.js [33m404[0m 0.421 ms - 155[0m
+2025-12-09 05:24 +00:00: [0mGET /config/stripe.ts [33m404[0m 0.435 ms - 155[0m
+2025-12-09 05:24 +00:00: [0mGET /server/stripe.js [33m404[0m 0.428 ms - 155[0m
+2025-12-09 05:24 +00:00: [0mGET /backend/stripe.js [33m404[0m 0.423 ms - 156[0m
+2025-12-09 05:24 +00:00: [0mGET /api/stripe.js [33m404[0m 0.423 ms - 152[0m
+2025-12-09 05:24 +00:00: [0mGET /api/stripe.ts [33m404[0m 0.403 ms - 152[0m
+2025-12-09 05:24 +00:00: [0mGET /functions/stripe.js [33m404[0m 0.408 ms - 158[0m
+2025-12-09 05:24 +00:00: [0mGET /functions/payment.js [33m404[0m 0.395 ms - 159[0m
+2025-12-09 05:24 +00:00: [0mGET /routes/payment.js [33m404[0m 0.410 ms - 156[0m
+2025-12-09 05:24 +00:00: [0mGET /routes/stripe.js [33m404[0m 0.415 ms - 155[0m
+2025-12-09 05:24 +00:00: [0mGET /controllers/stripeController.js [33m404[0m 0.410 ms - 170[0m
+2025-12-09 05:24 +00:00: [0mGET /utils/stripe.js [33m404[0m 0.458 ms - 154[0m
+2025-12-09 05:24 +00:00: [0mGET /modules/stripe.js [33m404[0m 0.438 ms - 156[0m
+2025-12-09 05:24 +00:00: [0mGET /stripe/index.js [33m404[0m 0.429 ms - 154[0m
+2025-12-09 05:24 +00:00: [0mGET /stripe/index.js [33m404[0m 0.435 ms - 154[0m
+2025-12-09 05:24 +00:00: [0mGET /config/services.php [33m404[0m 0.442 ms - 158[0m
+2025-12-09 05:24 +00:00: [0mGET /config/stripe.php [33m404[0m 0.403 ms - 156[0m
+2025-12-09 05:24 +00:00: [0mGET /app/Services/StripeService.php [33m404[0m 0.422 ms - 169[0m
+2025-12-09 05:24 +00:00: [0mGET /app/Http/Controllers/StripeController.php [33m404[0m 0.428 ms - 180[0m
+2025-12-09 05:24 +00:00: [0mGET /bootstrap/cache/config.php [33m404[0m 0.471 ms - 165[0m
+2025-12-09 05:24 +00:00: [0mGET /storage/app/stripe.json [33m404[0m 0.403 ms - 162[0m
+2025-12-09 05:24 +00:00: [0mGET /storage/app/keys/stripe.key [33m404[0m 0.399 ms - 166[0m
+2025-12-09 05:24 +00:00: [0mGET /app/config/stripe.yml [33m404[0m 0.399 ms - 160[0m
+2025-12-09 05:24 +00:00: [0mGET /app/config/payment.php [33m404[0m 0.468 ms - 161[0m
+2025-12-09 05:24 +00:00: [0mGET /config/settings/stripe.py [33m404[0m 0.422 ms - 164[0m
+2025-12-09 05:24 +00:00: [0mGET /settings_stripe.py [33m404[0m 0.416 ms - 157[0m
+2025-12-09 05:24 +00:00: [0mGET /app/settings_stripe.py [33m404[0m 0.795 ms - 161[0m
+2025-12-09 05:24 +00:00: [0mGET /project/settings/payment.py [33m404[0m 0.664 ms - 166[0m
+2025-12-09 05:24 +00:00: [0mGET /core/payment.py [33m404[0m 0.530 ms - 154[0m
+2025-12-09 05:24 +00:00: [0mGET /secrets/stripe.json [33m404[0m 0.464 ms - 158[0m
+2025-12-09 05:24 +00:00: [0mGET /instance/config.py [33m404[0m 0.443 ms - 157[0m
+2025-12-09 05:24 +00:00: [0mGET /config/initializers/stripe.rb [33m404[0m 0.447 ms - 168[0m
+2025-12-09 05:24 +00:00: [0mGET /config/secrets.yml [33m404[0m 0.439 ms - 157[0m
+2025-12-09 05:24 +00:00: [0mGET /config/credentials.yml.enc [33m404[0m 0.429 ms - 165[0m
+2025-12-09 05:24 +00:00: [0mGET /config/payment.yml [33m404[0m 0.438 ms - 157[0m
+2025-12-09 05:24 +00:00: [0mGET /config/stripe.json [33m404[0m 0.657 ms - 157[0m
+2025-12-09 05:24 +00:00: [0mGET /config/stripe.yaml [33m404[0m 0.441 ms - 157[0m
+2025-12-09 05:24 +00:00: [0mGET /internal/stripe/keys.go [33m404[0m 0.455 ms - 162[0m
+2025-12-09 05:24 +00:00: [0mGET /.github/workflows/stripe.yml [33m404[0m 0.467 ms - 167[0m
+2025-12-09 05:24 +00:00: [0mGET /.github/workflows/deploy.yml [33m404[0m 0.421 ms - 167[0m
+2025-12-09 05:24 +00:00: [0mGET /.github/workflows/build.yml [33m404[0m 0.413 ms - 166[0m
+2025-12-09 05:24 +00:00: [0mGET /.github/stripe.env [33m404[0m 0.413 ms - 157[0m
+2025-12-09 05:24 +00:00: [0mGET /.gitlab-ci.yml [33m404[0m 0.454 ms - 153[0m
+2025-12-09 05:24 +00:00: [0mGET /.circleci/config.yml [33m404[0m 0.424 ms - 159[0m
+2025-12-09 05:24 +00:00: [0mGET /.bitbucket/pipelines.yml [33m404[0m 0.471 ms - 163[0m
+2025-12-09 05:24 +00:00: [0mGET /config/webhook.php [33m404[0m 0.413 ms - 157[0m
+2025-12-09 05:24 +00:00: [0mGET /functions/webhook.js [33m404[0m 0.401 ms - 159[0m
+2025-12-09 05:24 +00:00: [0mGET /api/webhook.js [33m404[0m 0.439 ms - 153[0m
+2025-12-09 05:24 +00:00: [0mGET /routes/webhook.js [33m404[0m 0.430 ms - 156[0m
+2025-12-09 05:24 +00:00: [0mGET /webhook/stripe.php [33m404[0m 0.456 ms - 157[0m
+2025-12-09 05:24 +00:00: [0mGET /webhooks/settings.json [33m404[0m 0.995 ms - 161[0m
+2025-12-09 05:24 +00:00: [0mGET /config/keys/stripe_secret.key [33m404[0m 0.423 ms - 168[0m
+2025-12-09 05:24 +00:00: [0mGET /secrets/.stripe.env [33m404[0m 0.472 ms - 158[0m
+2025-12-09 05:24 +00:00: [0mGET /env/production/stripe.env [33m404[0m 0.414 ms - 164[0m
+2025-12-09 05:24 +00:00: [0mGET /payments/.env.stripe [33m404[0m 0.411 ms - 159[0m
+2025-12-09 05:24 +00:00: [0mGET /secure/stripe/secret.txt [33m404[0m 0.590 ms - 163[0m
+2025-12-09 05:24 +00:00: [0mGET /private/stripe/api_keys.json [33m404[0m 0.424 ms - 167[0m
+2025-12-09 05:24 +00:00: [0mGET /config/production/stripe.php.bak [33m404[0m 0.719 ms - 171[0m
+2025-12-09 05:24 +00:00: [0mGET /backup/.env.2023-06-01 [33m404[0m 0.469 ms - 161[0m
+2025-12-09 05:24 +00:00: [0mGET /backup/env/stripe.env [33m404[0m 0.405 ms - 160[0m
+2025-12-09 05:24 +00:00: [0mGET /old/stripe_config.php [33m404[0m 0.400 ms - 160[0m
+2025-12-09 05:24 +00:00: [0mGET /old/.env.backup [33m404[0m 0.424 ms - 154[0m
+2025-12-09 05:24 +00:00: [0mGET /deploy/.env.production.backup [33m404[0m 0.616 ms - 168[0m
+2025-12-09 05:24 +00:00: [0mGET /app/Config/stripe.conf [33m404[0m 0.424 ms - 161[0m
+2025-12-09 05:24 +00:00: [0mGET /api/private/stripe_keys.js [33m404[0m 0.912 ms - 165[0m
+2025-12-09 05:24 +00:00: [0mGET /secret/stripe_settings.yaml [33m404[0m 0.447 ms - 166[0m
+2025-12-09 05:24 +00:00: [0mGET /tmp/stripe.env [33m404[0m 0.440 ms - 153[0m
+2025-12-09 05:24 +00:00: [0mGET /logs/debug.log [33m404[0m 0.451 ms - 153[0m
+2025-12-09 05:24 +00:00: [0mGET /public/storage/.env [33m404[0m 0.431 ms - 158[0m
+2025-12-09 05:24 +00:00: [0mGET /configurations/stripe/credentials.json [33m404[0m 0.416 ms - 177[0m
+2025-12-09 05:24 +00:00: [0mGET /internal/config/.env.live [33m404[0m 0.419 ms - 164[0m
+2025-12-09 05:25 +00:00: [0mGET / [32m200[0m 1.392 ms - 1037[0m
+2025-12-09 05:32 +00:00: [0mPOST / [33m404[0m 0.696 ms - 140[0m
+2025-12-09 05:32 +00:00: [0mHEAD / [32m200[0m 1.148 ms - 1037[0m
+2025-12-09 05:34 +00:00: [0mHEAD / [32m200[0m 0.979 ms - 1037[0m
+2025-12-09 05:34 +00:00: [0mGET / [32m200[0m 0.965 ms - 1037[0m
+2025-12-09 05:34 +00:00: [0mGET /favicon.ico [33m404[0m 0.922 ms - 150[0m
+2025-12-09 05:39 +00:00: [0mPOST / [33m404[0m 0.553 ms - 140[0m
+2025-12-09 05:42 +00:00: [NewsNexus10] - POST /articles/with-ratings
+2025-12-09 05:42 +00:00: [NewsNexus10] - GET /articles-approveds/for-component
+2025-12-09 05:42 +00:00: [NewsNexus10] - articlesArray.length: 991
+2025-12-09 05:42 +00:00: [0mGET /articles-approveds/for-component [36m304[0m 5364.682 ms - -[0m
+2025-12-09 05:43 +00:00: [0mGET /articles/summary-statistics [32m200[0m 15972.225 ms - 175[0m
+2025-12-09 05:43 +00:00: [0mGET /robots.txt [33m404[0m 2.488 ms - 149[0m
+2025-12-09 05:43 +00:00: [0mGET /robots.txt [33m404[0m 0.469 ms - 149[0m
+2025-12-09 05:43 +00:00: [NewsNexus10] timeToRenderResponseFromApiInSeconds: 32.455
+2025-12-09 05:43 +00:00: [0mPOST /articles/with-ratings [32m200[0m 33315.645 ms - 48916428[0m
+2025-12-09 05:44 +00:00: [0mPOST / [33m404[0m 0.513 ms - 140[0m
+2025-12-09 05:46 +00:00: [0mGET /robots.txt [33m404[0m 0.942 ms - 149[0m
+2025-12-09 06:00 +00:00: [0mGET /robots.txt [33m404[0m 1.310 ms - 149[0m
+2025-12-09 06:00 +00:00: [0mGET / [32m200[0m 1.778 ms - 1037[0m
+2025-12-09 06:00 +00:00: [0mGET / [32m200[0m 0.891 ms - 1037[0m
+2025-12-09 06:00 +00:00: [0mGET /robots.txt [33m404[0m 0.662 ms - 149[0m
+2025-12-09 06:00 +00:00: [0mGET /sitemap.xml [33m404[0m 0.500 ms - 150[0m
+2025-12-09 06:00 +00:00: [0mGET /.well-known/security.txt [33m404[0m 0.527 ms - 163[0m
+2025-12-09 06:00 +00:00: [0mGET /favicon.ico [33m404[0m 0.437 ms - 150[0m
+2025-12-09 06:05 +00:00: [0mGET / [32m200[0m 1.011 ms - 1037[0m
+2025-12-09 06:19 +00:00: [0mGET /states [32m200[0m 7.947 ms - 8360[0m
+2025-12-09 06:21 +00:00: [0mGET / [32m200[0m 1.050 ms - 1037[0m
+2025-12-09 06:25 +00:00: [0mGET /webui/ [33m404[0m 0.614 ms - 145[0m
+2025-12-09 06:28 +00:00: [0mPOST /articles/with-ratings [33m403[0m 7.460 ms - 27[0m
+2025-12-09 06:28 +00:00: [0mGET /favicon.ico [33m404[0m 0.447 ms - 150[0m
+2025-12-09 06:31 +00:00: [0mGET / [32m200[0m 0.927 ms - 1037[0m
+2025-12-09 06:34 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194215 [32m200[0m 122.481 ms - 95[0m
+2025-12-09 06:35 +00:00: [0mGET /articles/get-approved/204198 [32m200[0m 23.359 ms - 40[0m
+2025-12-09 06:36 +00:00: [NewsNexus10] - starting /state/:articleId
+2025-12-09 06:36 +00:00: [0mPOST /states/204198 [32m200[0m 137.236 ms - 77[0m
+2025-12-09 06:36 +00:00: [NewsNexus10] articleId 204198: Carver dirt bike crash sends 1 to trauma center on Thanksgiving
+2025-12-09 06:36 +00:00: [NewsNexus10] approvedStatus: Approve
+2025-12-09 06:36 +00:00: [NewsNexus10] ---- > created new approval record for articleId 204198
+2025-12-09 06:36 +00:00: [0mPOST /articles/approve/204198 [32m200[0m 23.567 ms - 55[0m
+2025-12-09 06:37 +00:00: [0mPOST / [33m404[0m 0.766 ms - 140[0m
+2025-12-09 06:37 +00:00: [0mGET /.git/config [33m404[0m 0.487 ms - 150[0m
+2025-12-09 06:38 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194605 [32m200[0m 29.408 ms - 95[0m
+2025-12-09 06:42 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194634 [32m200[0m 26.774 ms - 95[0m
+2025-12-09 06:43 +00:00: [0mGET /geoserver/web/ [33m404[0m 0.643 ms - 153[0m
+2025-12-09 06:43 +00:00: [0mGET / [32m200[0m 2.039 ms - 1037[0m
+2025-12-09 06:44 +00:00: [0mGET /SDK/duckyisafaggot [33m404[0m 0.563 ms - 157[0m
+2025-12-09 06:44 +00:00: [0mGET /articles/get-approved/194502 [32m200[0m 21.877 ms - 40[0m
+2025-12-09 06:44 +00:00: [NewsNexus10] - starting /state/:articleId
+2025-12-09 06:44 +00:00: [0mPOST /states/194502 [32m200[0m 7.238 ms - 77[0m
+2025-12-09 06:44 +00:00: [NewsNexus10] articleId 194502: 19-Year-Old Suffers Serious Injuries in Douglas County Dirt Bike Crash - Fergus Now
+2025-12-09 06:44 +00:00: [NewsNexus10] approvedStatus: Approve
+2025-12-09 06:44 +00:00: [NewsNexus10] ---- > created new approval record for articleId 194502
+2025-12-09 06:44 +00:00: [0mPOST /articles/approve/194502 [32m200[0m 20.400 ms - 55[0m
+2025-12-09 06:46 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/189497 [32m200[0m 29.763 ms - 95[0m
+2025-12-09 06:47 +00:00: [NewsNexus10] articleId 194103: true
+2025-12-09 06:47 +00:00: [0mPOST /articles/is-being-reviewed/194103 [32m200[0m 6.892 ms - 61[0m
+2025-12-09 06:47 +00:00: [0mGET /.git/config [33m404[0m 0.499 ms - 150[0m
+2025-12-09 06:49 +00:00: [0mGET /articles/get-approved/194308 [32m200[0m 21.014 ms - 40[0m
+2025-12-09 06:50 +00:00: [NewsNexus10] - starting /state/:articleId
+2025-12-09 06:50 +00:00: [0mPOST /states/194308 [32m200[0m 6.196 ms - 77[0m
+2025-12-09 06:50 +00:00: [NewsNexus10] articleId 194308: 2 teens on electric bike hospitalized after being hit by car in Coral Springs - WPLG Local 10
+2025-12-09 06:50 +00:00: [NewsNexus10] approvedStatus: Approve
+2025-12-09 06:50 +00:00: [NewsNexus10] ---- > created new approval record for articleId 194308
+2025-12-09 06:50 +00:00: [0mPOST /articles/approve/194308 [32m200[0m 18.818 ms - 55[0m
+2025-12-09 06:50 +00:00: [0mGET /articles/summary-statistics [32m200[0m 10212.584 ms - 175[0m
+2025-12-09 06:50 +00:00: [NewsNexus10] - GET /articles-approveds/for-component
+2025-12-09 06:50 +00:00: [NewsNexus10] - articlesArray.length: 994
+2025-12-09 06:50 +00:00: [0mGET /articles-approveds/for-component [32m200[0m 392.797 ms - 1597037[0m
+2025-12-09 06:52 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194513 [32m200[0m 30.105 ms - 95[0m
+2025-12-09 06:52 +00:00: [NewsNexus10] articleId 194507: true
+2025-12-09 06:52 +00:00: [0mPOST /articles/is-being-reviewed/194507 [32m200[0m 8.742 ms - 61[0m
+2025-12-09 06:53 +00:00: [0mGET / [32m200[0m 1.677 ms - 1037[0m
+2025-12-09 06:54 +00:00: [0mGET /global-protect/portal/css/login.css [33m404[0m 0.655 ms - 174[0m
+2025-12-09 06:54 +00:00: [0mPOST / [33m404[0m 0.494 ms - 140[0m
+2025-12-09 06:54 +00:00: [0mGET /Autodiscover/Autodiscover.xml [33m404[0m 0.448 ms - 168[0m
+2025-12-09 06:54 +00:00: [0mGET /global-protect/login.esp [33m404[0m 0.417 ms - 163[0m
+2025-12-09 06:54 +00:00: [0mPOST / [33m404[0m 0.324 ms - 140[0m
+2025-12-09 06:56 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194232 [32m200[0m 33.160 ms - 95[0m
+2025-12-09 06:57 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194244 [32m200[0m 26.005 ms - 95[0m
+2025-12-09 06:58 +00:00: [0mGET /states [32m200[0m 5.744 ms - 8360[0m
+2025-12-09 07:01 +00:00: [0mGET / [32m200[0m 1.599 ms - 1037[0m
+2025-12-09 07:01 +00:00: [0mGET /favicon.ico [33m404[0m 0.729 ms - 150[0m
+2025-12-09 07:04 +00:00: [0mGET /robots.txt [33m404[0m 0.561 ms - 149[0m
+2025-12-09 07:05 +00:00: [NewsNexus10] publicationName: ktla.com
+2025-12-09 07:05 +00:00: [NewsNexus10] author: undefined
+2025-12-09 07:05 +00:00: [NewsNexus10] title: 12-year-old on e-bike seriously injured in Anaheim hit-and-run, police say
+2025-12-09 07:05 +00:00: [NewsNexus10] description: A 12-year-old boy riding an e-bike was seriously injured in a hit-and-run crash in Anaheim on Sunday night, according to police.
+2025-12-09 07:05 +00:00: 
+2025-12-09 07:05 +00:00: Video of the collision shows the boy entering an intersection on his bike just before a four-door Honda Accord strikes him. The impact sends him tumbling across the roadway. Police said the child suffered a broken leg and a concussion.
+2025-12-09 07:05 +00:00: 
+2025-12-09 07:05 +00:00: Neighbors who witnessed the crash recalled hearing the commotion outside their homes. One resident described turning around just in time to see the boy “ricochet” in front of a nearby house. The damaged e-bike and the Honda involved were left behind in the street.
+2025-12-09 07:05 +00:00: 
+2025-12-09 07:05 +00:00: The crash occurred near North Street at about 8:45 p.m., police said. After hitting the boy, the Honda collided with another vehicle on the street  before coming to a stop. All occupants of the Honda then got out and ran from the scene, according to eye witnesses.
+2025-12-09 07:05 +00:00: A witness said they saw three people leave the vehicle, estimating they appeared to be in their early 20s. Investigators said the car was registered in Fullerton, and officers recovered items inside that suggested a possible DUI may have been involved. Detectives said they are pursuing several leads.
+2025-12-09 07:05 +00:00: 
+2025-12-09 07:05 +00:00: Anaheim police are continuing to investigate the hit-and-run.
+2025-12-09 07:05 +00:00: [NewsNexus10] content: A 12-year-old boy riding an e-bike was seriously injured in a hit-and-run crash in Anaheim on Sunday night, according to police.
+2025-12-09 07:05 +00:00: 
+2025-12-09 07:05 +00:00: Video of the collision shows the boy entering an intersection on his bike just before a four-door Honda Accord strikes him. The impact sends him tumbling across the roadway. Police said the child suffered a broken leg and a concussion.
+2025-12-09 07:05 +00:00: 
+2025-12-09 07:05 +00:00: Neighbors who witnessed the crash recalled hearing the commotion outside their homes. One resident described turning around just in time to see the boy “ricochet” in front of a nearby house. The damaged e-bike and the Honda involved were left behind in the street.
+2025-12-09 07:05 +00:00: 
+2025-12-09 07:05 +00:00: The crash occurred near North Street at about 8:45 p.m., police said. After hitting the boy, the Honda collided with another vehicle on the street  before coming to a stop. All occupants of the Honda then got out and ran from the scene, according to eye witnesses.
+2025-12-09 07:05 +00:00: A witness said they saw three people leave the vehicle, estimating they appeared to be in their early 20s. Investigators said the car was registered in Fullerton, and officers recovered items inside that suggested a possible DUI may have been involved. Detectives said they are pursuing several leads.
+2025-12-09 07:05 +00:00: 
+2025-12-09 07:05 +00:00: Anaheim police are continuing to investigate the hit-and-run.
+2025-12-09 07:05 +00:00: [NewsNexus10] url: https://ktla.com/news/local-news/12-year-old-on-e-bike-seriously-injured-in-anaheim-hit-and-run-police-say/
+2025-12-09 07:05 +00:00: [NewsNexus10] publishedDate: 2025-11-24
+2025-12-09 07:05 +00:00: [NewsNexus10] stateObjArray: [object Object]
+2025-12-09 07:05 +00:00: [NewsNexus10] isApproved: true
+2025-12-09 07:05 +00:00: [NewsNexus10] kmNotes: undefined
+2025-12-09 07:05 +00:00: [NewsNexus10] stateObjArray: [object Object]
+2025-12-09 07:05 +00:00: [0mPOST /articles/add-article [32m200[0m 17.264 ms - 1700[0m
+2025-12-09 07:06 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/201420 [32m200[0m 26.249 ms - 95[0m
+2025-12-09 07:07 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194621 [32m200[0m 27.089 ms - 95[0m
+2025-12-09 07:08 +00:00: [0mGET /version [33m404[0m 0.565 ms - 146[0m
+2025-12-09 07:09 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194107 [32m200[0m 24.435 ms - 95[0m
+2025-12-09 07:12 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194224 [32m200[0m 29.538 ms - 95[0m
+2025-12-09 07:15 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194629 [32m200[0m 31.777 ms - 95[0m
+2025-12-09 07:18 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194516 [32m200[0m 29.560 ms - 95[0m
+2025-12-09 07:37 +00:00: [0mGET /articles/get-approved/194505 [32m200[0m 25.273 ms - 40[0m
+2025-12-09 07:38 +00:00: [NewsNexus10] - starting /state/:articleId
+2025-12-09 07:38 +00:00: [0mPOST /states/194505 [32m200[0m 7.693 ms - 77[0m
+2025-12-09 07:38 +00:00: [NewsNexus10] articleId 194505: Teen is injured in dirt bike crash in Ida Township on Saturday - Voice of Alexandria
+2025-12-09 07:38 +00:00: [NewsNexus10] approvedStatus: Approve
+2025-12-09 07:38 +00:00: [NewsNexus10] ---- > created new approval record for articleId 194505
+2025-12-09 07:38 +00:00: [0mPOST /articles/approve/194505 [32m200[0m 28.266 ms - 55[0m
+2025-12-09 07:38 +00:00: [0mGET /articles/summary-statistics [32m200[0m 13897.327 ms - 175[0m
+2025-12-09 07:38 +00:00: [NewsNexus10] - GET /articles-approveds/for-component
+2025-12-09 07:38 +00:00: [NewsNexus10] - articlesArray.length: 996
+2025-12-09 07:38 +00:00: [0mGET /articles-approveds/for-component [32m200[0m 67.571 ms - 1600226[0m
+2025-12-09 07:38 +00:00: [0mGET /states [32m200[0m 6.708 ms - 8360[0m
+2025-12-09 07:39 +00:00: [0mGET /states [32m200[0m 6.913 ms - 8360[0m
+2025-12-09 07:39 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194626 [32m200[0m 26.172 ms - 95[0m
+2025-12-09 08:10 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194236 [32m200[0m 31.952 ms - 95[0m
+2025-12-09 08:23 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194604 [32m200[0m 33.144 ms - 95[0m
+2025-12-09 08:24 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194627 [32m200[0m 25.453 ms - 95[0m
+2025-12-09 08:26 +00:00: [NewsNexus10] articleId 194518: true
+2025-12-09 08:26 +00:00: [0mPOST /articles/is-being-reviewed/194518 [32m200[0m 6.373 ms - 61[0m
+2025-12-09 08:26 +00:00: [NewsNexus10] articleId 194631: true
+2025-12-09 08:26 +00:00: [0mPOST /articles/is-being-reviewed/194631 [32m200[0m 7.635 ms - 61[0m
+2025-12-09 08:27 +00:00: [0mGET /articles/summary-statistics [36m304[0m 10952.270 ms - -[0m
+2025-12-09 08:27 +00:00: [NewsNexus10] - GET /articles-approveds/for-component
+2025-12-09 08:27 +00:00: [NewsNexus10] - articlesArray.length: 996
+2025-12-09 08:27 +00:00: [0mGET /articles-approveds/for-component [36m304[0m 60.995 ms - -[0m
+2025-12-09 08:28 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194101 [32m200[0m 29.760 ms - 95[0m
+2025-12-09 08:30 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194228 [32m200[0m 32.694 ms - 95[0m
+2025-12-09 08:30 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194106 [32m200[0m 25.999 ms - 95[0m
+2025-12-09 08:30 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/201418 [32m200[0m 25.722 ms - 95[0m
+2025-12-09 08:32 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194613 [32m200[0m 27.264 ms - 95[0m
+2025-12-09 08:33 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194633 [32m200[0m 31.632 ms - 95[0m
+2025-12-09 08:34 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194102 [32m200[0m 24.146 ms - 95[0m
+2025-12-09 08:36 +00:00: [0mGET /articles/get-approved/207113 [32m200[0m 21.444 ms - 40[0m
+2025-12-09 08:37 +00:00: [NewsNexus10] - starting /state/:articleId
+2025-12-09 08:37 +00:00: [0mPOST /states/207113 [32m200[0m 6.960 ms - 77[0m
+2025-12-09 08:37 +00:00: [NewsNexus10] articleId 207113: ‘Our hearts are just broken’: Parents mourn 13-year-old girl killed in ATV crash
+2025-12-09 08:37 +00:00: [NewsNexus10] approvedStatus: Approve
+2025-12-09 08:37 +00:00: [NewsNexus10] ---- > created new approval record for articleId 207113
+2025-12-09 08:37 +00:00: [0mPOST /articles/approve/207113 [32m200[0m 17.515 ms - 55[0m
+2025-12-09 08:37 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/207112 [32m200[0m 25.546 ms - 95[0m
+2025-12-09 08:37 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/207111 [32m200[0m 25.851 ms - 95[0m
+2025-12-09 08:38 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/207129 [32m200[0m 25.291 ms - 95[0m
+2025-12-09 08:38 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/192867 [32m200[0m 24.165 ms - 95[0m
+2025-12-09 08:38 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/198839 [32m200[0m 24.790 ms - 95[0m
+2025-12-09 08:38 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/165486 [32m200[0m 25.268 ms - 95[0m
+2025-12-09 08:39 +00:00: [0mGET /articles/summary-statistics [32m200[0m 10336.920 ms - 175[0m
+2025-12-09 08:39 +00:00: [NewsNexus10] - GET /articles-approveds/for-component
+2025-12-09 08:39 +00:00: [NewsNexus10] - articlesArray.length: 997
+2025-12-09 08:39 +00:00: [0mGET /articles-approveds/for-component [32m200[0m 60.422 ms - 1601284[0m
+2025-12-09 08:40 +00:00: [NewsNexus10] articleId 194052: true
+2025-12-09 08:40 +00:00: [0mPOST /articles/is-being-reviewed/194052 [32m200[0m 7.633 ms - 61[0m
+2025-12-09 08:40 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/169135 [32m200[0m 29.003 ms - 95[0m
+2025-12-09 08:41 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/192597 [32m200[0m 28.726 ms - 95[0m
+2025-12-09 08:42 +00:00: [NewsNexus10] articleId 194118: true
+2025-12-09 08:42 +00:00: [0mPOST /articles/is-being-reviewed/194118 [32m200[0m 9.567 ms - 61[0m
+2025-12-09 08:42 +00:00: [NewsNexus10] articleId 166728: true
+2025-12-09 08:42 +00:00: [0mPOST /articles/is-being-reviewed/166728 [32m200[0m 5.694 ms - 61[0m
+2025-12-09 08:42 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194657 [32m200[0m 27.473 ms - 95[0m
+2025-12-09 08:43 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/165640 [32m200[0m 24.736 ms - 95[0m
+2025-12-09 08:43 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/168471 [32m200[0m 25.919 ms - 95[0m
+2025-12-09 08:43 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/167941 [32m200[0m 25.646 ms - 95[0m
+2025-12-09 08:43 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/170166 [32m200[0m 25.407 ms - 95[0m
+2025-12-09 08:43 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/168529 [32m200[0m 24.449 ms - 95[0m
+2025-12-09 08:44 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/166394 [32m200[0m 24.971 ms - 95[0m
+2025-12-09 08:45 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194152 [32m200[0m 24.430 ms - 95[0m
+2025-12-09 08:45 +00:00: [0mPOST /articles/user-toggle-is-not-relevant/194153 [32m200[0m 24.279 ms - 95[0m
+2025-12-09 09:17 +00:00: [0mGET /robots.txt [33m404[0m 1.513 ms - 149[0m
+2025-12-09 12:17 +00:00: [0mGET /robots.txt [33m404[0m 0.971 ms - 149[0m
+2025-12-09 12:17 +00:00: [0mGET / [32m200[0m 1.951 ms - 1037[0m
+2025-12-09 13:39 +00:00: [NewsNexus10] - GET /articles-approveds/for-component
+2025-12-09 13:39 +00:00: [NewsNexus10] - articlesArray.length: 997
+2025-12-09 13:39 +00:00: [0mGET /articles-approveds/for-component [36m304[0m 134.453 ms - -[0m
+2025-12-09 13:39 +00:00: [0mGET /articles/summary-statistics [36m304[0m 10578.403 ms - -[0m
+2025-12-09 16:37 +00:00: [dotenv@17.2.3] injecting env (19) from .env -- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops
+2025-12-09 16:37 +00:00: database location: /home/nick/databases/NewsNexus10/newsnexus10.db
+2025-12-09 16:37 +00:00: ✅ Associations have been set up
+2025-12-09 16:37 +00:00: [NewsNexus10] Server running on http://0.0.0.0:8001
+2025-12-09 16:37 +00:00: [NewsNexus10] ✅ Database connected & synced
+2025-12-09 16:37 +00:00: [NewsNexus10] 🔸 User already exists: nickrodriguez@kineticmetrics.com
+
+Logged in as:
+
+nrodrig1
+
+Token: ✓ Present
+
+    Machines
+    Apps
+
+    Nginx
+    Registrar
+
+Admin
+
+Disclaimer and credit: Icons created by Pixel perfect - Flaticon
+Flaticon

