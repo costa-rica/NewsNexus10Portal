@@ -9,6 +9,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { useRouter } from "next/navigation";
 import { loginUser, updateStateArray } from "@/store/features/user/userSlice";
+import { loginSchema, validateInput } from "@/lib/validationSchemas";
 
 // export default function SignInForm() {
 export default function LoginForm() {
@@ -62,8 +63,19 @@ export default function LoginForm() {
 	}, [fetchStateArray, userReducer.token, router]);
 
 	const handleClickLogin = async () => {
+		// SECURITY: Validate input before sending to backend
+		// Prevents malicious input patterns and provides immediate user feedback
+		const validationResult = validateInput(loginSchema, { email, password });
 
-		const bodyObj = { email, password };
+		if (!validationResult.success) {
+			// Show first validation error to user
+			const firstError = Object.values(validationResult.errors)[0];
+			alert(firstError);
+			return;
+		}
+
+		// Use validated and sanitized data (email is trimmed and lowercased)
+		const bodyObj = validationResult.data;
 
 		const response = await fetch(
 			`${process.env.NEXT_PUBLIC_API_BASE_URL}/users/login`,
@@ -84,8 +96,8 @@ export default function LoginForm() {
 		}
 
 		if (response.ok) {
-
-			resJson.email = email;
+			// Use validated email (sanitized: trimmed and lowercased)
+			resJson.email = validationResult.data.email;
 			try {
 				dispatch(loginUser(resJson));
 				router.push("/articles/review");

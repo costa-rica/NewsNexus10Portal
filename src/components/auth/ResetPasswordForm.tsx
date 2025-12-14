@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Modal } from "@/components/ui/modal";
 import { ModalInformationOk } from "@/components/ui/modal/ModalInformationOk";
+import { resetPasswordSchema, validateInput } from "@/lib/validationSchemas";
 
 interface ResetPasswordFormProps {
   token: string;
@@ -37,34 +38,27 @@ export default function ResetPasswordForm({ token }: ResetPasswordFormProps) {
   const handleSubmit = async () => {
     // console.log("Password reset requested with token:", token);
 
-    // Validation
-    if (!password) {
-      showInfoModal(
-        "Password Required",
-        "Please enter a new password",
-        "warning"
-      );
-      return;
-    }
+    // SECURITY: Validate token and password before sending to backend
+    // Prevents malicious input patterns and provides immediate user feedback
+    const validationResult = validateInput(resetPasswordSchema, { token, password });
 
-    if (password.length < 2) {
-      showInfoModal(
-        "Password Too Short",
-        "Password must be at least 2 characters long",
-        "warning"
-      );
+    if (!validationResult.success) {
+      // Show first validation error to user
+      const firstError = Object.values(validationResult.errors)[0];
+      showInfoModal("Validation Error", firstError, "warning");
       return;
     }
 
     setIsLoading(true);
 
     try {
+      // Use validated password
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/reset-password/${token}`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/reset-password/${validationResult.data.token}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ newPassword: password }),
+          body: JSON.stringify({ newPassword: validationResult.data.password }),
         }
       );
 

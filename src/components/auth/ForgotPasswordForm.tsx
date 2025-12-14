@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Modal } from "@/components/ui/modal";
 import { ModalInformationOk } from "@/components/ui/modal/ModalInformationOk";
+import { forgotPasswordSchema, validateInput } from "@/lib/validationSchemas";
 
 export default function ForgotPasswordForm() {
   const [email, setEmail] = useState("");
@@ -31,24 +32,27 @@ export default function ForgotPasswordForm() {
   const handleSubmit = async () => {
     console.log("Forgot password requested for:", email);
 
-    if (!email) {
-      showInfoModal(
-        "Email Required",
-        "Please enter your email address",
-        "warning"
-      );
+    // SECURITY: Validate email before sending to backend
+    // Prevents malicious input patterns and provides immediate user feedback
+    const validationResult = validateInput(forgotPasswordSchema, { email });
+
+    if (!validationResult.success) {
+      // Show first validation error to user
+      const firstError = Object.values(validationResult.errors)[0];
+      showInfoModal("Invalid Email", firstError, "warning");
       return;
     }
 
     setIsLoading(true);
 
     try {
+      // Use validated and sanitized email (trimmed and lowercased)
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/users/request-password-reset`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email }),
+          body: JSON.stringify(validationResult.data),
         }
       );
 
@@ -63,6 +67,8 @@ export default function ForgotPasswordForm() {
 
       if (response.ok) {
         // Show success message regardless of whether email exists
+        // Update email state with validated version for display
+        setEmail(validationResult.data.email);
         setIsSubmitted(true);
       } else {
         const errorMessage =
