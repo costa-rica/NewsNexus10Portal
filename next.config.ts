@@ -1,7 +1,83 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-	/* config options here */
+	/**
+	 * SECURITY HEADERS CONFIGURATION
+	 *
+	 * PURPOSE: Implements HTTP security headers to protect against common web attacks
+	 *
+	 * SECURITY CONTEXT:
+	 * During the December 2025 security breach, the application lacked defense-in-depth
+	 * security measures. These headers provide additional protection layers even if
+	 * other vulnerabilities exist.
+	 *
+	 * HEADERS EXPLAINED:
+	 * - X-Frame-Options: Prevents clickjacking by blocking iframe embedding
+	 * - X-Content-Type-Options: Prevents MIME-type sniffing attacks
+	 * - X-XSS-Protection: Enables browser's built-in XSS filter (legacy browsers)
+	 * - Referrer-Policy: Controls what information is sent in Referer header
+	 * - Strict-Transport-Security: Forces HTTPS connections (prevents downgrade attacks)
+	 *
+	 * REFERENCE: docs/security-measures20251213/Security_Measures_01_Abbreviated.md
+	 *
+	 * @see https://nextjs.org/docs/app/api-reference/next-config-js/headers
+	 */
+	async headers() {
+		return [
+			{
+				// Apply security headers to all routes
+				source: "/:path*",
+				headers: [
+					{
+						// Prevents the site from being embedded in iframes (clickjacking protection)
+						key: "X-Frame-Options",
+						value: "DENY",
+					},
+					{
+						// Prevents browsers from MIME-sniffing responses away from declared content-type
+						key: "X-Content-Type-Options",
+						value: "nosniff",
+					},
+					{
+						// Enables browser XSS filter (legacy support for older browsers)
+						key: "X-XSS-Protection",
+						value: "1; mode=block",
+					},
+					{
+						// Controls how much referrer information is sent with requests
+						key: "Referrer-Policy",
+						value: "strict-origin-when-cross-origin",
+					},
+					{
+						// Forces browsers to only connect via HTTPS for next 1 year
+						// Prevents protocol downgrade attacks and cookie hijacking
+						key: "Strict-Transport-Security",
+						value: "max-age=31536000; includeSubDomains",
+					},
+				],
+			},
+		];
+	},
+
+	/**
+	 * SECURITY: Hide "X-Powered-By: Next.js" header
+	 * Reduces information leakage about technology stack (security through obscurity)
+	 * Makes automated reconnaissance slightly harder for attackers
+	 */
+	poweredByHeader: false,
+
+	/**
+	 * DEVELOPMENT: Enable React Strict Mode
+	 * Helps identify potential problems in the application during development
+	 * Double-renders components to catch side effects
+	 */
+	reactStrictMode: true,
+
+	/**
+	 * SVG LOADER CONFIGURATION
+	 * Configures webpack to load SVG files as React components using @svgr/webpack
+	 * Note: Turbopack breaks this configuration - must use webpack for builds
+	 */
 	webpack(config) {
 		const assetRule = config.module.rules.find((r: any) =>
 			r.test?.test?.(".svg")
