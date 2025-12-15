@@ -74,9 +74,25 @@ const nextConfig: NextConfig = {
 	reactStrictMode: true,
 
 	/**
-	 * SVG LOADER CONFIGURATION
+	 * SVG LOADER CONFIGURATION (Turbopack)
+	 * Configures Turbopack to load SVG files as React components using @svgr/webpack
+	 * This is the Next.js 16+ way to handle SVG imports
+	 *
+	 * @see https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack
+	 */
+	turbopack: {
+		rules: {
+			"*.svg": {
+				loaders: ["@svgr/webpack"],
+				as: "*.js",
+			},
+		},
+	},
+
+	/**
+	 * SVG LOADER CONFIGURATION (Webpack fallback)
+	 * Fallback configuration for webpack mode (if explicitly used with --webpack flag)
 	 * Configures webpack to load SVG files as React components using @svgr/webpack
-	 * Note: Turbopack breaks this configuration - must use webpack for builds
 	 */
 	webpack(config) {
 		const assetRule = config.module.rules.find((r: any) =>

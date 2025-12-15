@@ -13,7 +13,6 @@ The goal of NewsNexus10Portal is to faithfully re-create and enhance the functio
 ### Overview TL;DR
 
 - started from `npx create-next-app@latest`
-  - No Turbopack -> this causes problems with the svg icons (src/icons)
 - Heavily lifting the architecture from [free-nextjs-admin-dashboard-main](https://tailadmin.com/download)
 - Customizeing it to fit the needs of the NewsNexus Portal.
 - Uses App Router

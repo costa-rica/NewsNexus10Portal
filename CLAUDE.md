@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-NewsNexus10Portal is a Next.js 15 web application built with the App Router, serving as the modernized front end for the NewsNexus10Db and microservices suite. It uses Next.js conventions, TypeScript, TailwindCSS v4, and Redux Toolkit with persist for state management.
+NewsNexus10Portal is a Next.js 16 web application built with the App Router and Turbopack, serving as the modernized front end for the NewsNexus10Db and microservices suite. It uses Next.js conventions, TypeScript, TailwindCSS v4, and Redux Toolkit with persist for state management.
 
 The project architecture is heavily inspired by the free-nextjs-admin-dashboard-main template, providing a structured file system, reusable components, and responsive dashboard layouts.
 
@@ -74,12 +74,13 @@ Logout should use `logoutUserFully` action to clear all state.
 
 ### SVG Icons
 
-SVG icons in `src/icons/` are imported as React components using `@svgr/webpack`:
+SVG icons in `src/icons/` are imported as React components using `@svgr/webpack` with Turbopack:
 
-- Custom webpack config in `next.config.ts` transforms `.svg` imports to components
+- Turbopack configuration in `next.config.ts` transforms `.svg` imports to React components
 - Icons exported from `src/icons/index.tsx`
 - Usage: `import { EyeIcon, EyeCloseIcon } from "@/icons"`
-- **Do NOT use Turbopack** — it breaks SVG loading (causes problems with the svg icons)
+- **Turbopack is enabled by default in Next.js 16** — SVG loading is fully supported
+- Webpack fallback configuration is also maintained for compatibility if `--webpack` flag is used
 
 ### Styling
 
