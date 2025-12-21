@@ -26,7 +26,7 @@
  * @see https://zod.dev
  */
 
-import { z } from 'zod';
+import { z } from "zod";
 
 /**
  * Email validation schema
@@ -37,15 +37,15 @@ import { z } from 'zod';
  * - Blocks control characters and special chars that could be exploited
  */
 const emailSchema = z
-	.string()
-	.min(1, 'Email is required')
-	.max(320, 'Email is too long') // 64 (local) + 1 (@) + 255 (domain)
-	.email('Please enter a valid email address')
-	.regex(
-		/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-		'Email contains invalid characters'
-	)
-	.transform((email) => email.toLowerCase().trim());
+  .string()
+  .min(1, "Email is required")
+  .max(320, "Email is too long") // 64 (local) + 1 (@) + 255 (domain)
+  .email("Please enter a valid email address")
+  .regex(
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+    "Email contains invalid characters"
+  )
+  .transform((email) => email.toLowerCase().trim());
 
 /**
  * Password validation schema
@@ -59,12 +59,12 @@ const emailSchema = z
  * This is intentionally lenient to allow backend to control password policy
  */
 const passwordSchema = z
-	.string()
-	.min(1, 'Password is required')
-	.min(8, 'Password must be at least 8 characters')
-	.max(128, 'Password is too long')
-	// SECURITY: Block null bytes and control characters
-	.regex(/^[\x20-\x7E]*$/, 'Password contains invalid characters');
+  .string()
+  .min(1, "Password is required")
+  // .min(8, 'Password must be at least 8 characters')
+  .max(128, "Password is too long")
+  // SECURITY: Block null bytes and control characters
+  .regex(/^[\x20-\x7E]*$/, "Password contains invalid characters");
 
 /**
  * Password reset token validation
@@ -75,13 +75,10 @@ const passwordSchema = z
  * - Prevents path traversal and injection
  */
 const tokenSchema = z
-	.string()
-	.min(1, 'Reset token is required')
-	.max(500, 'Invalid reset token')
-	.regex(
-		/^[a-zA-Z0-9._-]+$/,
-		'Reset token contains invalid characters'
-	);
+  .string()
+  .min(1, "Reset token is required")
+  .max(500, "Invalid reset token")
+  .regex(/^[a-zA-Z0-9._-]+$/, "Reset token contains invalid characters");
 
 /**
  * LOGIN FORM VALIDATION
@@ -89,8 +86,8 @@ const tokenSchema = z
  * Validates user login credentials before sending to backend API
  */
 export const loginSchema = z.object({
-	email: emailSchema,
-	password: passwordSchema,
+  email: emailSchema,
+  password: passwordSchema,
 });
 
 export type LoginFormData = z.infer<typeof loginSchema>;
@@ -102,8 +99,8 @@ export type LoginFormData = z.infer<typeof loginSchema>;
  * Can be extended with password confirmation, terms acceptance, etc.
  */
 export const registerSchema = z.object({
-	email: emailSchema,
-	password: passwordSchema,
+  email: emailSchema,
+  password: passwordSchema,
 });
 
 export type RegisterFormData = z.infer<typeof registerSchema>;
@@ -114,7 +111,7 @@ export type RegisterFormData = z.infer<typeof registerSchema>;
  * Validates email for password reset request
  */
 export const forgotPasswordSchema = z.object({
-	email: emailSchema,
+  email: emailSchema,
 });
 
 export type ForgotPasswordFormData = z.infer<typeof forgotPasswordSchema>;
@@ -125,8 +122,8 @@ export type ForgotPasswordFormData = z.infer<typeof forgotPasswordSchema>;
  * Validates new password and reset token
  */
 export const resetPasswordSchema = z.object({
-	token: tokenSchema,
-	password: passwordSchema,
+  token: tokenSchema,
+  password: passwordSchema,
 });
 
 export type ResetPasswordFormData = z.infer<typeof resetPasswordSchema>;
@@ -151,23 +148,25 @@ export type ResetPasswordFormData = z.infer<typeof resetPasswordSchema>;
  * ```
  */
 export function validateInput<T extends z.ZodType>(
-	schema: T,
-	data: unknown
-): { success: true; data: z.infer<T> } | { success: false; errors: Record<string, string> } {
-	const result = schema.safeParse(data);
+  schema: T,
+  data: unknown
+):
+  | { success: true; data: z.infer<T> }
+  | { success: false; errors: Record<string, string> } {
+  const result = schema.safeParse(data);
 
-	if (result.success) {
-		return { success: true, data: result.data };
-	}
+  if (result.success) {
+    return { success: true, data: result.data };
+  }
 
-	// Convert Zod errors to user-friendly field-based error messages
-	const errors: Record<string, string> = {};
-	if (result.error?.issues) {
-		result.error.issues.forEach((issue) => {
-			const field = issue.path.join('.');
-			errors[field] = issue.message;
-		});
-	}
+  // Convert Zod errors to user-friendly field-based error messages
+  const errors: Record<string, string> = {};
+  if (result.error?.issues) {
+    result.error.issues.forEach((issue) => {
+      const field = issue.path.join(".");
+      errors[field] = issue.message;
+    });
+  }
 
-	return { success: false, errors };
+  return { success: false, errors };
 }
