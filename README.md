@@ -84,7 +84,7 @@ The goal of NewsNexus10Portal is to faithfully re-create and enhance the functio
 NEXT_PUBLIC_API_BASE_URL=https://api.news-nexus.kineticmetrics.com
 NEXT_PUBLIC_API_BASE_URL_DEV=https://api.news-nexus-dev.kineticmetrics.com
 NEXT_PUBLIC_API_BASE_URL_WORKSTATION=http://localhost:3000
-NEXT_PUBLIC_APP_NAME=NewsNexus
+NEXT_PUBLIC_NAME_APP=NewsNexus
 NEXT_PUBLIC_MODE=dev
 ```
 
@@ -143,12 +143,14 @@ The `Modal` component is the foundational wrapper that provides:
 A pre-built content component for alert/notification modals. Displays a title, message, and single action button.
 
 **Features**:
+
 - Variant-based styling: `info`, `success`, `error`, `warning`
 - Customizable button text
 - Colored message box matching variant
 - Executes optional callback before closing
 
 **Usage**:
+
 ```tsx
 <Modal isOpen={show} onClose={handleClose}>
   <ModalInformationOk
@@ -165,12 +167,14 @@ A pre-built content component for alert/notification modals. Displays a title, m
 A confirmation dialog content component with two action buttons.
 
 **Features**:
+
 - Customizable Yes/No button text
 - Button styling variants: `danger` (red) or `primary` (brand color)
 - Separate callbacks for Yes and No actions
 - Grey secondary button for cancel/no action
 
 **Usage**:
+
 ```tsx
 <Modal isOpen={show} onClose={handleClose}>
   <ModalInformationYesOrNo

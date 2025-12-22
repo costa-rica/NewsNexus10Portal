@@ -10,8 +10,8 @@ const environment =
 const isProduction = environment === "production";
 
 const appName =
-  process.env.NEXT_PUBLIC_APP_NAME ||
-  process.env.APP_NAME ||
+  process.env.NEXT_PUBLIC_NAME_APP ||
+  process.env.NAME_APP ||
   "NewsNexus10Portal";
 const logDir =
   process.env.NEXT_PUBLIC_PATH_TO_LOGS || process.env.PATH_TO_LOGS || "./logs";
