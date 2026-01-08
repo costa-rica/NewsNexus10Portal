@@ -1,5 +1,7 @@
 # Node.js Logging Requirements
 
+** !! This document needs to be updated --- each application has its own logging strategy !! **
+
 ## Overview
 
 This document specifies the logging requirements and implementation strategy for all Node.js applications in the NewsNexus suite using the Winston logging package. The approach is designed to minimize code changes during initial implementation while providing production-grade logging capabilities.
