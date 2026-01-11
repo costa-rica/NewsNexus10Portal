@@ -68,6 +68,11 @@ const navItems: NavItem[] = [
         path: "/analysis/approved-chatgpt",
         pro: false,
       },
+      {
+        name: "AI State Assigner",
+        path: "/analysis/state-assigner",
+        pro: false,
+      },
     ],
   },
   {

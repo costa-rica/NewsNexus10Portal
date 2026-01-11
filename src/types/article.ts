@@ -84,3 +84,60 @@ export interface ChatGPTApprovedArticle extends Article {
 	ArticlesApproved02: ArticleApproved[];
 	ArticleApprovedsIsApproved?: number | null;
 }
+
+// State Assigner types
+export interface StateAssignment {
+	promptId: number;
+	isHumanApproved: boolean;
+	isDeterminedToBeError: boolean;
+	occuredInTheUS: boolean;
+	reasoning: string;
+	stateId: number;
+	stateName: string;
+}
+
+export interface StateAssignerArticle {
+	id: number;
+	title: string;
+	description: string;
+	url: string;
+	createdAt: string;
+	stateAssignment: StateAssignment;
+}
+
+export interface StateAssignerResponse {
+	result: boolean;
+	message: string;
+	count: number;
+	articles: StateAssignerArticle[];
+}
+
+// Article details types for state assigner modal
+export interface StateInfo {
+	id: number;
+	name: string;
+}
+
+export interface StateAiApproved {
+	promptId: number;
+	isHumanApproved: boolean;
+	reasoning: string;
+	state: StateInfo;
+}
+
+export interface ArticleDetailsResponse {
+	articleId: number;
+	title: string;
+	description?: string;
+	url: string;
+	content?: string;
+	stateHumanApprovedArray?: StateInfo[];
+	stateAiApproved?: StateAiApproved;
+}
+
+// Human verify response type
+export interface HumanVerifyResponse {
+	status: string;
+	stateHumanApprovedArray: StateInfo[];
+	stateAiApproved: StateAiApproved;
+}
