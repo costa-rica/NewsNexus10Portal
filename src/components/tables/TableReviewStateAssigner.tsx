@@ -250,7 +250,7 @@ const TableReviewStateAssigner: React.FC<TableReviewStateAssignerProps> = ({
 				</div>
 
 				{/* Table */}
-				<div className="overflow-x-auto">
+				<div>
 					<table className="w-full">
 						<thead className="bg-gray-50 dark:bg-gray-800/50">
 							{table.getHeaderGroups().map((headerGroup) => (
