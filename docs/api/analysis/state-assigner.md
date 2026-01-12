@@ -10,7 +10,7 @@ All state-assigner endpoints are prefixed with `/analysis/state-assigner` and ha
 
 ## POST /analysis/state-assigner/
 
-Retrieves articles with their AI-assigned state data from the ArticleStateContracts02 table, including state assignment metadata such as prompt ID, approval status, and AI reasoning.
+Retrieves articles with their AI-assigned state data from the ArticleStateContracts02 table, including state assignment metadata such as prompt ID, approval status, and AI reasoning. Also includes semantic rating scores from NewsNexusSemanticScorer02 and location classifier scores from NewsNexusClassifierLocationScorer01 for each article.
 
 **Authentication:** Required (JWT token)
 
@@ -64,6 +64,10 @@ curl -X POST http://localhost:8001/analysis/state-assigner/ \
       "description": "Investigation reveals safety concerns with popular device",
       "url": "https://example.com/article/1234",
       "createdAt": "2026-01-10T14:30:00.000Z",
+      "semanticRatingMax": 0.89,
+      "semanticRatingMaxLabel": "fire hazard",
+      "locationClassifierScore": 0.92,
+      "locationClassifierScoreLabel": "California",
       "stateAssignment": {
         "promptId": 5,
         "isHumanApproved": false,
@@ -80,6 +84,10 @@ curl -X POST http://localhost:8001/analysis/state-assigner/ \
       "description": "Choking hazard leads to nationwide recall",
       "url": "https://example.com/article/1235",
       "createdAt": "2026-01-09T10:15:00.000Z",
+      "semanticRatingMax": 0.92,
+      "semanticRatingMaxLabel": "recall",
+      "locationClassifierScore": 0.88,
+      "locationClassifierScoreLabel": "New York",
       "stateAssignment": {
         "promptId": 5,
         "isHumanApproved": true,
@@ -105,6 +113,10 @@ curl -X POST http://localhost:8001/analysis/state-assigner/ \
   - **description**: Article description
   - **url**: Article URL
   - **createdAt**: Timestamp when article was added to database
+  - **semanticRatingMax**: Highest semantic similarity score (0-1 range) from NewsNexusSemanticScorer02 (null if not available)
+  - **semanticRatingMaxLabel**: Keyword with highest semantic similarity score (null if not available)
+  - **locationClassifierScore**: Location classifier confidence score (0-1 range) from NewsNexusClassifierLocationScorer01 (null if not available)
+  - **locationClassifierScoreLabel**: State name identified by location classifier (null if not available)
   - **stateAssignment**: Object containing AI state assignment metadata
     - **promptId**: ID of the prompt used for AI analysis
     - **isHumanApproved**: Whether a human has approved this state assignment
@@ -141,6 +153,9 @@ curl -X POST http://localhost:8001/analysis/state-assigner/ \
 - When `includeNullState=false` or not provided: returns articles with assigned states (stateId IS NOT NULL)
 - When `includeNullState=true`: returns articles without assigned states (stateId IS NULL)
 - Joins Article, ArticleStateContracts02, and State tables
+- Fetches semantic rating scores from NewsNexusSemanticScorer02 AI entity (hardcoded)
+- Fetches location classifier scores from NewsNexusClassifierLocationScorer01 AI entity (hardcoded)
+- If either AI entity is not found or fails, articles are returned without those scores (graceful degradation)
 - Accessible by all authenticated users
 
 ---

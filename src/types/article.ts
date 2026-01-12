@@ -102,6 +102,10 @@ export interface StateAssignerArticle {
 	description: string;
 	url: string;
 	createdAt: string;
+	semanticRatingMax: number | null;
+	semanticRatingMaxLabel: string | null;
+	locationClassifierScore: number | null;
+	locationClassifierScoreLabel: string | null;
 	stateAssignment: StateAssignment;
 }
 

@@ -128,6 +128,54 @@ const TableReviewStateAssigner: React.FC<TableReviewStateAssignerProps> = ({
 					<div className="text-xs">{getValue()}</div>
 				),
 			}),
+			columnHelper.accessor("semanticRatingMax", {
+				header: "Nexus Semantic Rating",
+				enableSorting: true,
+				cell: ({ getValue }) => {
+					const value = getValue();
+					if (value === null || value === undefined) {
+						return <div className="text-center text-xs">N/A</div>;
+					}
+					const normalized = Math.max(0, Math.min(1, Number(value)));
+					const green = Math.floor(normalized * 200);
+					const color = `rgb(${128 - green / 3}, ${green}, ${128 - green / 3})`;
+					const percent = Math.round(normalized * 100);
+					return (
+						<div className="flex justify-center">
+							<span
+								className="flex items-center justify-center w-10 h-10 rounded-full text-xs font-semibold"
+								style={{ backgroundColor: color }}
+							>
+								{percent}%
+							</span>
+						</div>
+					);
+				},
+			}),
+			columnHelper.accessor("locationClassifierScore", {
+				header: "Nexus Location Rating",
+				enableSorting: true,
+				cell: ({ getValue }) => {
+					const value = getValue();
+					if (value === null || value === undefined) {
+						return <div className="text-center text-xs">N/A</div>;
+					}
+					const normalized = Math.max(0, Math.min(1, Number(value)));
+					const green = Math.floor(normalized * 200);
+					const color = `rgb(${128 - green / 3}, ${green}, ${128 - green / 3})`;
+					const percent = Math.round(normalized * 100);
+					return (
+						<div className="flex justify-center">
+							<span
+								className="flex items-center justify-center w-10 h-10 rounded-full text-xs font-semibold"
+								style={{ backgroundColor: color }}
+							>
+								{percent}%
+							</span>
+						</div>
+					);
+				},
+			}),
 			columnHelper.display({
 				id: "actions",
 				header: "Actions",
