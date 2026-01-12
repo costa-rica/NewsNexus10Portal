@@ -6,6 +6,10 @@ The page is used to display a table of articles that have been assigned states w
 
 The page will be used to display a table component called TableReviewStateAssigner.
 
+## AppSidebar
+
+The AppSidebar will have a new item called "AI State Assigner" that will link to /analysis/state-assigner. This will be added to the "Analysis" section of the sidebar.
+
 ## API Endpoints necessary for this page
 
 See the docs/api/analysis/state-assigner.md document for the API endpoints.
