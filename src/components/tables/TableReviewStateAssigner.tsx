@@ -193,21 +193,15 @@ const TableReviewStateAssigner: React.FC<TableReviewStateAssignerProps> = ({
 					);
 				},
 			}),
-			columnHelper.display({
-				id: "actions",
-				header: "Actions",
+			columnHelper.accessor("stateAssignment.isHumanApproved", {
+				header: "Human Approved",
+				enableSorting: true,
 				cell: ({ row }) => {
 					const article = row.original;
 					const isApproved = article.stateAssignment.isHumanApproved;
 
 					return (
-						<div className="flex items-center gap-2">
-							<button
-								onClick={() => setSelectedArticleId(article.id)}
-								className="px-3 py-1 text-xs text-white bg-brand-500 rounded hover:bg-brand-600 dark:bg-brand-400 dark:hover:bg-brand-500 transition-colors"
-							>
-								Details
-							</button>
+						<div className="flex justify-center">
 							<button
 								onClick={() =>
 									handleApproveReject(
@@ -224,6 +218,24 @@ const TableReviewStateAssigner: React.FC<TableReviewStateAssignerProps> = ({
 								title={isApproved ? "Approved - Click to reject" : "Unapproved - Click to approve"}
 							>
 								<CheckCircleIcon className="w-6 h-6" />
+							</button>
+						</div>
+					);
+				},
+			}),
+			columnHelper.display({
+				id: "details",
+				header: "",
+				cell: ({ row }) => {
+					const article = row.original;
+
+					return (
+						<div className="flex justify-center">
+							<button
+								onClick={() => setSelectedArticleId(article.id)}
+								className="px-3 py-1 text-xs text-white bg-brand-500 rounded hover:bg-brand-600 dark:bg-brand-400 dark:hover:bg-brand-500 transition-colors"
+							>
+								Details
 							</button>
 						</div>
 					);
