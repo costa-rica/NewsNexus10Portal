@@ -102,6 +102,7 @@ export interface StateAssignerArticle {
 	description: string;
 	url: string;
 	createdAt: string;
+	publishedDate: string;
 	semanticRatingMax: number | null;
 	semanticRatingMaxLabel: string | null;
 	locationClassifierScore: number | null;

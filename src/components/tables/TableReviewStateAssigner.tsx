@@ -121,6 +121,23 @@ const TableReviewStateAssigner: React.FC<TableReviewStateAssignerProps> = ({
 					);
 				},
 			}),
+			columnHelper.accessor("publishedDate", {
+				header: "Published Date",
+				enableSorting: true,
+				cell: ({ getValue }) => {
+					const dateString = getValue();
+					if (!dateString) return <div className="text-xs">N/A</div>;
+
+					const date = new Date(dateString);
+					const formattedDate = date.toLocaleDateString("en-US", {
+						year: "numeric",
+						month: "short",
+						day: "numeric",
+					});
+
+					return <div className="text-xs">{formattedDate}</div>;
+				},
+			}),
 			columnHelper.accessor("stateAssignment.stateName", {
 				header: "State",
 				enableSorting: true,

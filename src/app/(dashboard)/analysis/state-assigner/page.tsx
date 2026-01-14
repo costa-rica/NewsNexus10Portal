@@ -29,7 +29,9 @@ const StateAssignerPage: React.FC = () => {
 							Authorization: `Bearer ${token}`,
 							"Content-Type": "application/json",
 						},
-						body: JSON.stringify({}),
+						body: JSON.stringify({
+							targetArticleThresholdDaysOld: 180,
+						}),
 					}
 				);
 
