@@ -824,6 +824,7 @@ export default function ReviewArticles() {
 					articleId={stateAssignerArticleId}
 					onClose={() => setStateAssignerArticleId(null)}
 					onArticleUpdate={handleStateAssignerArticleUpdate}
+					showFullDetails={false}
 				/>
 			)}
 		</div>

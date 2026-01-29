@@ -10,13 +10,15 @@ import { ChevronDownIcon, ChevronUpIcon } from "@/icons";
 interface ModalStateAssignerDetailsProps {
   articleId: number;
   onClose: () => void;
-  onArticleUpdate: (articleId: number, isHumanApproved: boolean) => void;
+  onArticleUpdate?: (articleId: number, isHumanApproved: boolean) => void;
+  showFullDetails?: boolean;
 }
 
 const ModalStateAssignerDetails: React.FC<ModalStateAssignerDetailsProps> = ({
   articleId,
   onClose,
   onArticleUpdate,
+  showFullDetails = true,
 }) => {
   const [articleDetails, setArticleDetails] =
     useState<ArticleDetailsResponse | null>(null);
@@ -111,7 +113,7 @@ const ModalStateAssignerDetails: React.FC<ModalStateAssignerDetailsProps> = ({
       });
 
       // Update parent component state
-      onArticleUpdate(articleId, result.stateAiApproved.isHumanApproved);
+      onArticleUpdate?.(articleId, result.stateAiApproved.isHumanApproved);
 
       // Show success feedback
       setFeedbackModal({
@@ -207,77 +209,77 @@ const ModalStateAssignerDetails: React.FC<ModalStateAssignerDetailsProps> = ({
             </div>
           )}
 
-          {/* Human Approved States */}
-          <div className="mb-6 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-            <p className="text-sm text-gray-700 dark:text-gray-300">
-              <span className="font-medium">Human Approved:</span>{" "}
-              {humanApprovedStates}
-            </p>
-          </div>
+          {showFullDetails && (
+            <div className="mb-6 p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                <span className="font-medium">Human Approved:</span>{" "}
+                {humanApprovedStates}
+              </p>
+            </div>
+          )}
 
-          {/* Content Section - Collapsible */}
-          <div className="mb-6">
-            <button
-              onClick={() => setIsContentExpanded(!isContentExpanded)}
-              className="w-full flex items-center justify-between p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              <span className="text-sm font-semibold text-gray-900 dark:text-white">
-                Article Content
-              </span>
-              {isContentExpanded ? (
-                <ChevronUpIcon className="w-5 h-5 text-gray-600 dark:text-gray-400" />
-              ) : (
-                <ChevronDownIcon className="w-5 h-5 text-gray-600 dark:text-gray-400" />
-              )}
-            </button>
-            {isContentExpanded && (
-              <div className="mt-2 p-4 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700">
-                {articleDetails.content ? (
-                  <div className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap max-h-96 overflow-y-auto">
-                    {articleDetails.content}
-                  </div>
+          {showFullDetails && (
+            <div className="mb-6">
+              <button
+                onClick={() => setIsContentExpanded(!isContentExpanded)}
+                className="w-full flex items-center justify-between p-4 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              >
+                <span className="text-sm font-semibold text-gray-900 dark:text-white">
+                  Article Content
+                </span>
+                {isContentExpanded ? (
+                  <ChevronUpIcon className="w-5 h-5 text-gray-600 dark:text-gray-400" />
                 ) : (
-                  <p className="text-sm text-gray-500 dark:text-gray-400 italic">
-                    Content not available
-                  </p>
+                  <ChevronDownIcon className="w-5 h-5 text-gray-600 dark:text-gray-400" />
                 )}
-
-                {/* Description subsection */}
-                <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <h5 className="text-xs font-semibold text-gray-700 dark:text-gray-400 uppercase mb-2">
-                    Description
-                  </h5>
-                  {articleDetails.description ? (
-                    <p className="text-sm text-gray-700 dark:text-gray-300">
-                      {articleDetails.description}
-                    </p>
+              </button>
+              {isContentExpanded && (
+                <div className="mt-2 p-4 rounded-lg bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700">
+                  {articleDetails.content ? (
+                    <div className="text-sm text-gray-700 dark:text-gray-300 whitespace-pre-wrap max-h-96 overflow-y-auto">
+                      {articleDetails.content}
+                    </div>
                   ) : (
                     <p className="text-sm text-gray-500 dark:text-gray-400 italic">
-                      Description not available
+                      Content not available
                     </p>
                   )}
-                </div>
-              </div>
-            )}
-          </div>
 
-          {/* Action Button -- Temporarily deactivated button */}
-          {/* {articleDetails.stateAiApproved && (
-						<div className="flex justify-end">
-							<button
-								type="button"
-								onClick={handleApproveReject}
-								className={`px-6 py-2 rounded-lg font-medium text-white transition-colors ${buttonStyle}`}
-							>
-								{buttonText}
-							</button>
-						</div>
-					)} */}
+                  <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <h5 className="text-xs font-semibold text-gray-700 dark:text-gray-400 uppercase mb-2">
+                      Description
+                    </h5>
+                    {articleDetails.description ? (
+                      <p className="text-sm text-gray-700 dark:text-gray-300">
+                        {articleDetails.description}
+                      </p>
+                    ) : (
+                      <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+                        Description not available
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {showFullDetails && articleDetails.stateAiApproved && (
+            <div className="flex justify-end">
+              <button
+                type="button"
+                onClick={handleApproveReject}
+                className={`px-6 py-2 rounded-lg font-medium text-white transition-colors ${buttonStyle}`}
+              >
+                {buttonText}
+              </button>
+            </div>
+          )}
         </div>
       </Modal>
 
       {/* Feedback Modal */}
-      {feedbackModal && (
+      {showFullDetails && feedbackModal && (
         <Modal isOpen={feedbackModal.show} onClose={closeFeedbackModal}>
           <ModalInformationOk
             title={feedbackModal.title}
