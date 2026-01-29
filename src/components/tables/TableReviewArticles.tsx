@@ -214,54 +214,78 @@ const TableReviewArticles: React.FC<TableReviewArticlesProps> = ({
 							return <div className="text-xs">{getValue()}</div>;
 						},
 					}),
-					columnHelper.accessor("semanticRatingMax", {
-						header: "Nexus Semantic Rating",
-						enableSorting: true,
-						cell: ({ getValue }) => {
-							const value = getValue();
-							if (value === "N/A") {
-								return <div className="text-center">N/A</div>;
+					columnHelper.accessor(
+						(row) => {
+							const value = row.semanticRatingMax;
+							if (value === "N/A" || value === null || value === undefined) {
+								return undefined;
 							}
-							const normalized = Math.max(0, Math.min(1, Number(value)));
-							const green = Math.floor(normalized * 200);
-							const color = `rgb(${128 - green / 3}, ${green}, ${128 - green / 3})`;
-							const percent = Math.round(normalized * 100);
-							return (
-								<div className="flex justify-center">
-									<span
-										className="flex items-center justify-center w-10 h-10 rounded-full text-xs font-semibold"
-										style={{ backgroundColor: color }}
-									>
-										{percent}%
-									</span>
-								</div>
-							);
+							return Number(value);
 						},
-					}),
-					columnHelper.accessor("locationClassifierScore", {
-						header: "Nexus Location Rating",
-						enableSorting: true,
-						cell: ({ getValue }) => {
-							const value = getValue();
-							if (value === "N/A") {
-								return <div className="text-center">N/A</div>;
+						{
+							id: "semanticRatingMax",
+							header: "Nexus Semantic Rating",
+							enableSorting: true,
+							sortUndefined: "last",
+							sortingFn: "basic",
+							cell: ({ getValue }) => {
+								const value = getValue();
+								if (value === undefined || value === null) {
+									return <div className="text-center">N/A</div>;
+								}
+								const normalized = Math.max(0, Math.min(1, Number(value)));
+								const green = Math.floor(normalized * 200);
+								const color = `rgb(${128 - green / 3}, ${green}, ${128 - green / 3})`;
+								const percent = Math.round(normalized * 100);
+								return (
+									<div className="flex justify-center">
+										<span
+											className="flex items-center justify-center w-10 h-10 rounded-full text-xs font-semibold"
+											style={{ backgroundColor: color }}
+										>
+											{percent}%
+										</span>
+									</div>
+								);
+							},
+						}
+					),
+					columnHelper.accessor(
+						(row) => {
+							const value = row.locationClassifierScore;
+							if (value === "N/A" || value === null || value === undefined) {
+								return undefined;
 							}
-							const normalized = Math.max(0, Math.min(1, Number(value)));
-							const green = Math.floor(normalized * 200);
-							const color = `rgb(${128 - green / 3}, ${green}, ${128 - green / 3})`;
-							const percent = Math.round(normalized * 100);
-							return (
-								<div className="flex justify-center">
-									<span
-										className="flex items-center justify-center w-10 h-10 rounded-full text-xs font-semibold"
-										style={{ backgroundColor: color }}
-									>
-										{percent}%
-									</span>
-								</div>
-							);
+							return Number(value);
 						},
-					}),
+						{
+							id: "locationClassifierScore",
+							header: "Nexus Location Rating",
+							enableSorting: true,
+							sortUndefined: "last",
+							sortingFn: "basic",
+							cell: ({ getValue }) => {
+								const value = getValue();
+								if (value === undefined || value === null) {
+									return <div className="text-center">N/A</div>;
+								}
+								const normalized = Math.max(0, Math.min(1, Number(value)));
+								const green = Math.floor(normalized * 200);
+								const color = `rgb(${128 - green / 3}, ${green}, ${128 - green / 3})`;
+								const percent = Math.round(normalized * 100);
+								return (
+									<div className="flex justify-center">
+										<span
+											className="flex items-center justify-center w-10 h-10 rounded-full text-xs font-semibold"
+											style={{ backgroundColor: color }}
+										>
+											{percent}%
+										</span>
+									</div>
+								);
+							},
+						}
+					),
 					columnHelper.accessor(
 						(row) => row.stateAssignment?.stateName ?? undefined,
 						{
