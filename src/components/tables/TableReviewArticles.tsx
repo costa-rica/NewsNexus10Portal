@@ -34,6 +34,7 @@ interface TableReviewArticlesProps {
 	onToggleReviewed?: (articleId: number) => void;
 	onToggleRelevant?: (articleId: number) => void;
 	onDeleteArticle?: (article: Article) => void;
+	onStateAssignmentClick?: (articleId: number) => void;
 }
 
 const TableReviewArticles: React.FC<TableReviewArticlesProps> = ({
@@ -47,6 +48,7 @@ const TableReviewArticles: React.FC<TableReviewArticlesProps> = ({
 	onToggleReviewed,
 	onToggleRelevant,
 	onDeleteArticle,
+	onStateAssignmentClick,
 }) => {
 	const [pagination, setPagination] = useState<PaginationState>({
 		pageIndex: 0,
@@ -259,7 +261,31 @@ const TableReviewArticles: React.FC<TableReviewArticlesProps> = ({
 								</div>
 							);
 						},
-					})
+					}),
+					columnHelper.accessor(
+						(row) => row.stateAssignment?.stateName ?? undefined,
+						{
+							id: "stateAssignmentStateName",
+							header: "State (AI Assigned)",
+							enableSorting: true,
+							sortUndefined: "last",
+							sortingFn: "alphanumeric",
+							cell: ({ row }) => {
+								const stateName = row.original.stateAssignment?.stateName;
+								if (!stateName) {
+									return <div className="text-xs text-gray-400">N/A</div>;
+								}
+								return (
+									<button
+										onClick={() => onStateAssignmentClick?.(row.original.id)}
+										className="text-xs text-brand-500 hover:text-brand-600 dark:text-brand-400 dark:hover:text-brand-300 hover:underline"
+									>
+										{stateName}
+									</button>
+								);
+							},
+						}
+					)
 				);
 			}
 
@@ -270,6 +296,7 @@ const TableReviewArticles: React.FC<TableReviewArticlesProps> = ({
 			onToggleReviewed,
 			onToggleRelevant,
 			onDeleteArticle,
+			onStateAssignmentClick,
 			showReviewedColumn,
 			showRelevantColumn,
 			showDeleteColumn,

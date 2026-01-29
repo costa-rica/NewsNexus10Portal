@@ -18,12 +18,14 @@ import {
 } from "@/store/features/user/userSlice";
 import { Modal } from "@/components/ui/modal";
 import { ModalInformationOk } from "@/components/ui/modal/ModalInformationOk";
+import ModalStateAssignerDetails from "@/components/ui/modal/ModalStateAssignerDetails";
 
 export default function ReviewArticles() {
 	const dispatch = useAppDispatch();
 	const { token, stateArray = [] } = useAppSelector((state) => state.user);
 	const [articlesArray, setArticlesArray] = useState<Article[]>([]);
 	const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
+	const [stateAssignerArticleId, setStateAssignerArticleId] = useState<number | null>(null);
 	const userReducer = useAppSelector((s) => s.user);
 	const [loadingComponents, setLoadingComponents] = useState({
 		table01: false,
@@ -502,6 +504,23 @@ export default function ReviewArticles() {
 		setHasFilterChanges(false);
 	};
 
+	const handleStateAssignerArticleUpdate = (articleId: number, isHumanApproved: boolean) => {
+		// Update the articlesArray with the new isHumanApproved status
+		setArticlesArray((prevArray) =>
+			prevArray.map((article) =>
+				article.id === articleId && article.stateAssignment
+					? {
+							...article,
+							stateAssignment: {
+								...article.stateAssignment,
+								isHumanApproved,
+							},
+					  }
+					: article
+			)
+		);
+	};
+
 	return (
 		<div className="flex flex-col gap-4 md:gap-6">
 			<h1 className="text-title-xl text-gray-700 dark:text-gray-300">
@@ -782,6 +801,7 @@ export default function ReviewArticles() {
 				onSelectArticle={handleSelectArticleFromTable}
 				onToggleReviewed={handleClickIsReviewed}
 				onToggleRelevant={handleClickIsRelevant}
+				onStateAssignmentClick={setStateAssignerArticleId}
 			/>
 
 			{/* Alert Modal */}
@@ -797,6 +817,15 @@ export default function ReviewArticles() {
 					onClose={() => setAlertModal({ ...alertModal, show: false })}
 				/>
 			</Modal>
+
+			{/* State Assigner Details Modal */}
+			{stateAssignerArticleId && (
+				<ModalStateAssignerDetails
+					articleId={stateAssignerArticleId}
+					onClose={() => setStateAssignerArticleId(null)}
+					onArticleUpdate={handleStateAssignerArticleUpdate}
+				/>
+			)}
 		</div>
 	);
 }

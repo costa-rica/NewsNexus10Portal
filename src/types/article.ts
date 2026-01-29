@@ -1,3 +1,14 @@
+// State Assignment type
+export interface StateAssignment {
+	promptId: number;
+	isHumanApproved: boolean;
+	isDeterminedToBeError: boolean;
+	occuredInTheUS: boolean;
+	reasoning: string;
+	stateId: number;
+	stateName: string;
+}
+
 // Shared Article type for the application
 export interface Article {
 	id: number;
@@ -16,6 +27,7 @@ export interface Article {
 	nameOfOrg?: string;
 	semanticRatingMax?: number | string;
 	locationClassifierScore?: number | string;
+	stateAssignment?: StateAssignment | null;
 }
 
 // Article Report Contract (junction table between articles and reports)
@@ -86,16 +98,6 @@ export interface ChatGPTApprovedArticle extends Article {
 }
 
 // State Assigner types
-export interface StateAssignment {
-	promptId: number;
-	isHumanApproved: boolean;
-	isDeterminedToBeError: boolean;
-	occuredInTheUS: boolean;
-	reasoning: string;
-	stateId: number;
-	stateName: string;
-}
-
 export interface StateAssignerArticle {
 	id: number;
 	title: string;

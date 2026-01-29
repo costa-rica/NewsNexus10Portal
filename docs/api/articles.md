@@ -1502,22 +1502,22 @@ curl -X GET http://localhost:8001/articles/article-details/12345 \
 
 **Response Fields:**
 
-| Field                    | Type   | Optional | Description                                                       |
-| ------------------------ | ------ | -------- | ----------------------------------------------------------------- |
-| articleId                | number | No       | Unique article identifier                                         |
-| title                    | string | No       | Article headline                                                  |
-| description              | string | No       | Article summary or excerpt                                        |
-| url                      | string | No       | Full URL to the article source                                    |
-| content                  | string | Yes      | Full scraped article content from ArticleContents table           |
-| stateHumanApprovedArray  | array  | Yes      | Array of human-approved state objects from ArticleStateContracts  |
-| stateAiApproved          | object | Yes      | AI-approved state with metadata from ArticleStateContracts02      |
+| Field                   | Type   | Optional | Description                                                      |
+| ----------------------- | ------ | -------- | ---------------------------------------------------------------- |
+| articleId               | number | No       | Unique article identifier                                        |
+| title                   | string | No       | Article headline                                                 |
+| description             | string | No       | Article summary or excerpt                                       |
+| url                     | string | No       | Full URL to the article source                                   |
+| content                 | string | Yes      | Full scraped article content from ArticleContents table          |
+| stateHumanApprovedArray | array  | Yes      | Array of human-approved state objects from ArticleStateContracts |
+| stateAiApproved         | object | Yes      | AI-approved state with metadata from ArticleStateContracts02     |
 
 **stateHumanApprovedArray Objects:**
 
-| Field | Type   | Description        |
-| ----- | ------ | ------------------ |
-| id    | number | State ID           |
-| name  | string | Full state name    |
+| Field | Type   | Description     |
+| ----- | ------ | --------------- |
+| id    | number | State ID        |
+| name  | string | Full state name |
 
 **stateAiApproved Object:**
 
@@ -1572,7 +1572,9 @@ const getArticleDetails = async (articleId) => {
 
   if (article.stateHumanApprovedArray) {
     logger.info(
-      `Human-approved states: ${article.stateHumanApprovedArray.map((s) => s.name).join(", ")}`
+      `Human-approved states: ${article.stateHumanApprovedArray
+        .map((s) => s.name)
+        .join(", ")}`
     );
   }
 
@@ -1630,5 +1632,205 @@ This endpoint follows the ERROR_REQUIREMENTS.md standards:
 - `GET /articles/approved` - Get only approved articles
 - `POST /analysis/state-assigner` - Get articles with AI state assignments for analysis
 - `GET /articles/get-approved/:articleId` - Get approval information for article
+
+---
+
+## POST /articles/with-ratings
+
+Retrieves articles enriched with AI rating scores from semantic scoring and location classification models for AI-assisted review workflows.
+
+**Authentication:** Required (JWT token)
+
+**Request Body:**
+
+```json
+{
+  "returnOnlyThisPublishedDateOrAfter": "2025-01-01",
+  "returnOnlyThisCreatedAtDateOrAfter": "2025-01-01",
+  "semanticScorerEntityName": "NewsNexusSemanticScorer02",
+  "returnOnlyIsNotApproved": true,
+  "returnOnlyIsRelevant": true
+}
+```
+
+**Request Body Fields:**
+
+| Field                              | Type    | Required | Description                                                           |
+| ---------------------------------- | ------- | -------- | --------------------------------------------------------------------- |
+| returnOnlyThisPublishedDateOrAfter | string  | No       | ISO 8601 date - only return articles published on or after            |
+| returnOnlyThisCreatedAtDateOrAfter | string  | No       | ISO 8601 date - only return articles created on or after              |
+| semanticScorerEntityName           | string  | No       | AI entity name for semantic scoring (e.g., NewsNexusSemanticScorer02) |
+| returnOnlyIsNotApproved            | boolean | No       | If true, only return unapproved articles                              |
+| returnOnlyIsRelevant               | boolean | No       | If true, only return relevant articles                                |
+
+**Response (200 OK):**
+
+```json
+{
+  "articleCount": 2,
+  "articlesArray": [
+    {
+      "id": 12345,
+      "title": "Electric Scooter Recall Announced",
+      "description": "The CPSC announced a recall of electric scooters...",
+      "publishedDate": "2025-11-07T14:30:00.000Z",
+      "publicationName": "Consumer Safety News",
+      "url": "https://example.com/news/scooter-recall",
+      "States": [
+        {
+          "id": 5,
+          "name": "California",
+          "abbreviation": "CA"
+        }
+      ],
+      "statesStringCommaSeparated": "California",
+      "isRelevant": true,
+      "isApproved": false,
+      "requestQueryString": "AND scooter OR e-scooter",
+      "nameOfOrg": "NewsAPI",
+      "semanticRatingMaxLabel": "recall",
+      "semanticRatingMax": 0.89,
+      "locationClassifierScoreLabel": "California",
+      "locationClassifierScore": 0.92,
+      "isBeingReviewed": false,
+      "stateAssignment": {
+        "promptId": 5,
+        "isHumanApproved": false,
+        "isDeterminedToBeError": false,
+        "occuredInTheUS": true,
+        "reasoning": "Article mentions specific location in California and describes product safety incident",
+        "stateId": 5,
+        "stateName": "California"
+      }
+    }
+  ],
+  "timeToRenderResponseFromApiInSeconds": 1.234
+}
+```
+
+**Response (401 Unauthorized):**
+
+```json
+{
+  "message": "Token is required"
+}
+```
+
+**Response (404 Not Found - AI Entity):**
+
+```json
+{
+  "message": "AI not found."
+}
+```
+
+**Response (500 Internal Server Error):**
+
+```json
+{
+  "message": "No related EntityWhoCategorizedArticles found"
+}
+```
+
+**Example:**
+
+```bash
+curl -X POST http://localhost:8001/articles/with-ratings \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "semanticScorerEntityName": "NewsNexusSemanticScorer02",
+    "returnOnlyThisCreatedAtDateOrAfter": "2025-01-01",
+    "returnOnlyIsNotApproved": true,
+    "returnOnlyIsRelevant": true
+  }'
+```
+
+**Article Object Fields:**
+
+| Field                        | Type         | Description                                                   |
+| ---------------------------- | ------------ | ------------------------------------------------------------- |
+| id                           | number       | Unique article identifier                                     |
+| title                        | string       | Article headline                                              |
+| description                  | string       | Article summary or excerpt                                    |
+| publishedDate                | string       | ISO 8601 timestamp when article was published                 |
+| publicationName              | string       | Name of the publication source                                |
+| url                          | string       | Full URL to the article source                                |
+| States                       | array        | Array of state objects associated with this article           |
+| statesStringCommaSeparated   | string       | Comma-separated state names (e.g., "California, New York")    |
+| isRelevant                   | boolean      | true if article is relevant (not in ArticleIsRelevant table)  |
+| isApproved                   | boolean      | true if article has isApproved=true in ArticleApproveds table |
+| requestQueryString           | string       | Formatted search keywords used to find this article           |
+| nameOfOrg                    | string       | Name of the news aggregator source (e.g., "NewsAPI", "GNews") |
+| semanticRatingMaxLabel       | string       | Keyword with highest semantic similarity score                |
+| semanticRatingMax            | number       | Highest semantic similarity score (0-1 range)                 |
+| locationClassifierScoreLabel | string       | State name identified by location classifier                  |
+| locationClassifierScore      | number       | Location classifier confidence score (0-1 range)              |
+| isBeingReviewed              | boolean      | true if article has entry in ArticleRevieweds table           |
+| stateAssignment              | object\|null | AI-assigned state information from ArticleStateContracts02    |
+
+**stateAssignment Object Structure:**
+
+| Field               | Type    | Description                                                             |
+| ------------------- | ------- | ----------------------------------------------------------------------- |
+| promptId            | number  | ID of the prompt used for AI state assignment                           |
+| isHumanApproved     | boolean | Whether a human has approved this AI state assignment                   |
+| isDeterminedToBeError | boolean | Whether this AI assignment has been marked as an error                  |
+| occuredInTheUS      | boolean | Whether the AI determined the incident occurred in the United States    |
+| reasoning           | string  | AI's explanation for why this state was assigned                        |
+| stateId             | number  | ID of the state assigned by AI (or null if not applicable)             |
+| stateName           | string  | Full name of the state assigned by AI (or null if not applicable)      |
+
+**stateAssignment Field Behavior:**
+
+- Returns `null` if no AI state assignment exists for the article in ArticleStateContracts02
+- Returns complete object with all fields if an AI state assignment exists
+- Used for displaying AI-assigned state in the frontend and rendering the ModalStateAssignerDetails component
+- Complements the `States` array which contains human-approved state assignments
+
+**Behavior:**
+
+- Queries articles using `sqlQueryArticlesForWithRatingsRoute()` with date filters
+- Joins with ArticleStateContracts02 table to include AI state assignment data
+- Filters articles by approval and relevance status in JavaScript
+- Fetches semantic scorer AI scores from the AI entity specified in `semanticScorerEntityName`
+- Fetches location classifier scores from `NewsNexusClassifierLocationScorer01` (hardcoded at src/routes/articles.js:846)
+- Returns articles with AI scoring results and state assignment data enriched into each article object
+- Includes performance timing in response for monitoring
+- Boolean fields from SQLite (0/1) are automatically converted to JavaScript booleans (true/false)
+
+**Use Cases:**
+
+1. **AI-Assisted Review**: Display articles with AI confidence scores for manual review
+2. **Score-Based Filtering**: Filter articles by semantic relevance or location confidence
+3. **Performance Monitoring**: Track AI scoring system performance with timing metrics
+4. **State Verification**: Compare location classifier predictions with human assignments
+5. **AI State Assignment Display**: Show AI-assigned state and reasoning in the TableReviewArticles component
+6. **Modal State Details**: Render the ModalStateAssignerDetails component with AI state assignment information
+7. **Human Verification Workflow**: Review and approve/reject AI state assignments based on reasoning provided
+
+**Related Files:**
+
+- Route Implementation: `src/routes/articles.js:727-939`
+- Query Functions: `src/modules/queriesSql.js`
+  - `sqlQueryArticlesForWithRatingsRoute()`
+  - `sqlQueryArticlesAndAiScores()`
+- Related Tables: Articles, States, ArticleApproveds, ArticleIsRelevant, ArticleRevieweds, ArticleStateContracts02, ArtificialIntelligence, EntityWhoCategorizedArticle, Prompts
+
+**Related Endpoints:**
+
+- `POST /articles` - Get filtered articles without AI scores
+- `GET /articles/approved` - Get only approved articles
+- `POST /analysis/state-assigner` - Get articles with AI state assignments (similar data source)
+- `POST /analysis/llm04/update-states-with-scores` - Update article states based on AI scores
+
+**Important Notes:**
+
+- The `stateAssignment` field provides AI-assigned state information from ArticleStateContracts02
+- This is separate from the `States` array which contains human-approved state assignments from ArticleStateContracts
+- Articles may have both human-approved states (States array) and an AI-assigned state (stateAssignment object)
+- Articles without AI state assignments will have `stateAssignment: null`
+- The `stateAssignment.reasoning` field contains the AI's explanation for the state assignment, useful for human review
+- Boolean values (isHumanApproved, isDeterminedToBeError, occuredInTheUS) are properly converted from SQLite integers to JavaScript booleans
 
 ---
