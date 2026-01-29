@@ -3,6 +3,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ApprovedArticle } from "@/types/article";
 
+const getDateDaysAgo = (daysAgo: number) => {
+	const date = new Date();
+	date.setDate(date.getDate() - daysAgo);
+	return date.toISOString().slice(0, 10);
+};
+
 export interface RequestTableBodyParams {
 	includeIsFromAutomation: boolean;
 	dateLimitOnRequestMade: string | null;
@@ -60,8 +66,8 @@ const initialState: UserState = {
 		dateLimitOnRequestMade: null,
 	},
 	articleTableBodyParams: {
-		returnOnlyThisPublishedDateOrAfter: null,
-		returnOnlyThisCreatedAtDateOrAfter: null,
+		returnOnlyThisPublishedDateOrAfter: getDateDaysAgo(90),
+		returnOnlyThisCreatedAtDateOrAfter: getDateDaysAgo(90),
 		returnOnlyIsNotApproved: true,
 		returnOnlyIsRelevant: true,
 	},
@@ -166,8 +172,8 @@ export const userSlice = createSlice({
 				dateLimitOnRequestMade: null,
 			};
 			state.articleTableBodyParams = {
-				returnOnlyThisPublishedDateOrAfter: null,
-				returnOnlyThisCreatedAtDateOrAfter: null,
+				returnOnlyThisPublishedDateOrAfter: getDateDaysAgo(90),
+				returnOnlyThisCreatedAtDateOrAfter: getDateDaysAgo(90),
 				returnOnlyIsNotApproved: true,
 				returnOnlyIsRelevant: true,
 			};
