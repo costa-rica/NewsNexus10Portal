@@ -42,6 +42,7 @@ All endpoint documentation should follow this concise structure:
 
 - [/core/articles](./api/articles.md) : Article management
 - [/core/articles-approveds](./api/articles-approveds.md) : Article approval management
+- [/states](./api/state.md) : State management and article-state associations
 
 ## Analysis Routes
 
@@ -49,3 +50,8 @@ All endpoint documentation should follow this concise structure:
 - [/analysis/llm01](./api/analysis/llm01.md) : LLM Analysis with ChatGPT
 - [/analysis/llm02](./api/analysis/llm02.md) : Article approval workflow utilities
 - [/analysis/llm04](./api/analysis/llm04.md) : Article approval workflow utilities
+- [/analysis/state-assigner](./api/analysis/state-assigner.md) : AI state assignment analysis from ArticleStateContracts02
+
+## News Organizations Routes
+
+- [/google-rss](./api/newsOrgs/google-rss.md) : Google News RSS feed search and article import

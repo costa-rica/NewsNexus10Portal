@@ -148,3 +148,35 @@ export interface HumanVerifyResponse {
 	stateHumanApprovedArray: StateInfo[];
 	stateAiApproved: StateAiApproved;
 }
+
+// Google RSS Article type (from /google-rss/make-request endpoint)
+export interface GoogleRssArticle {
+	title: string;
+	link: string;
+	description: string;
+	source: string;
+	pubDate: string;
+	content?: string;
+	selected?: boolean; // For UI selection state
+}
+
+// Google RSS Make Request Response
+export interface GoogleRssMakeRequestResponse {
+	success: boolean;
+	url?: string;
+	articlesArray?: GoogleRssArticle[];
+	count?: number;
+	error?: string;
+	message?: string;
+}
+
+// Google RSS Add to Database Request Body
+export interface GoogleRssAddToDatabaseRequest {
+	articlesArray: GoogleRssArticle[];
+	url: string;
+	and_keywords?: string;
+	and_exact_phrases?: string;
+	or_keywords?: string;
+	or_exact_phrases?: string;
+	time_range?: string;
+}

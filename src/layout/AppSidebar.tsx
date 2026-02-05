@@ -39,6 +39,7 @@ const navItems: NavItem[] = [
         path: "/articles/automation",
         pro: false,
       },
+      { name: "Get Google RSS", path: "/articles/get/google-rss", pro: false },
     ],
   },
   {
